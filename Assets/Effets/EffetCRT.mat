@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: EffetCRT
+  m_Shader: {fileID: 4800000, guid: 381c08161e57efb40a1177971d7e07b5, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Ints: []
+    m_Floats:
+    - _Aberration: 3
+    - _Balayage: 0.15
+    - _Grille: 0.5
+    - _Neige: 0.15
+    - _TailleBalayage: 3
+    - _TailleGrille: 6
+    - _TailleNeige: 1.5
+    - _Tremblement: 0.03
+    - _Vitesse: 0
+    m_Colors: []
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
