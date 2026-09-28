@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 // gère l'apparition des popups, leurs fréquences type etc
@@ -15,6 +17,14 @@ public class SpawnerPopups : MonoBehaviour
         public float apparaitApres = 0f;
     }
 
+    [System.Serializable]
+    public class TypeBoss
+    {
+        public GameObject prefab;
+        [Tooltip("Le boss spawn a partir de ce stade de progression (0-1)")]
+        public float progression = 0f;
+    }
+
     [Header("Popups normales")]
     [Tooltip("On peut en mettre une plusieurs fois dans la liste pour qu'elle apparaisse plus souvent")]
     public TypeDePopup[] popups;
@@ -28,14 +38,11 @@ public class SpawnerPopups : MonoBehaviour
     public int maxPopupsEnMemeTemps = 100;
 
     [Header("Boss")]
-    public GameObject[] boss;
-    [Tooltip("A quelle moment arrive le premier Boss")]
-    public float premierBoss = 150f;
-    [Tooltip("Temps entre chaque Boss")]
-    public float intervalleEntreBoss = 80f;
+    [Tooltip("La liste des boss avec le moment de progression a laquel ils spawn")]
+    public TypeBoss[] boss;
+
 
     float prochainePopup = 1f;
-    float prochainBoss;
     int numeroBoss = 0;
     int ordreAffichage = 10000; // chaque nouvelle popup s'affiche derrière les précédentes ducoup on laisse de la marge
 
@@ -44,13 +51,10 @@ public class SpawnerPopups : MonoBehaviour
         instance = this;
     }
 
-    void Start()
-    {
-        prochainBoss = premierBoss;
-    }
-
     void Update()
     {
+        GameManager jeu = GameManager.instance;
+
         float temps = GameManager.instance.tempsEcoule;
 
         if (temps >= prochainePopup && Popup.list.Count < maxPopupsEnMemeTemps)
@@ -62,11 +66,12 @@ public class SpawnerPopups : MonoBehaviour
             prochainePopup = temps + Mathf.Lerp(delaiAuDebut, delaiMinimum, avancement);
         }
 
-        if (temps >= prochainBoss && boss.Length > 0)
+
+        // on fait spawn les boss
+        if (numeroBoss < boss.Count() && jeu.Progression() >= boss[numeroBoss].progression)
         {
-            FaireApparaitre(boss[numeroBoss % boss.Length], PositionHorsEcran());
+            FaireApparaitre(boss[numeroBoss].prefab, PositionHorsEcran());
             numeroBoss++;
-            prochainBoss += intervalleEntreBoss;
         }
     }
 
@@ -106,14 +111,14 @@ public class SpawnerPopups : MonoBehaviour
     {
         Camera cam = Camera.main;
         Vector2 centre = cam.transform.position;
-        float demiHauteur = cam.orthographicSize + 1.4f;         // + un peu : la popup démarre cachée
-        float demiLargeur = cam.orthographicSize * cam.aspect + 2.6f;
+        float demiHauteur = cam.orthographicSize;
+        float demiLargeur = cam.orthographicSize * cam.aspect;
 
-        // On choisit un côté au hasard : 0 = haut, 1 = bas, 2 = gauche, 3 = droite
+        // On choisit un côté au hasard
         int cote = Random.Range(0, 4);
-        if (cote == 0) return centre + new Vector2(Random.Range(-demiLargeur, demiLargeur), demiHauteur);
-        if (cote == 1) return centre + new Vector2(Random.Range(-demiLargeur, demiLargeur), -demiHauteur);
-        if (cote == 2) return centre + new Vector2(-demiLargeur, Random.Range(-demiHauteur, demiHauteur));
-        return centre + new Vector2(demiLargeur, Random.Range(-demiHauteur, demiHauteur));
+        if (cote == 0) return centre + new Vector2(Random.Range(-demiLargeur, demiLargeur), demiHauteur); // haut
+        if (cote == 1) return centre + new Vector2(Random.Range(-demiLargeur, demiLargeur), -demiHauteur); // bas
+        if (cote == 2) return centre + new Vector2(-demiLargeur, Random.Range(-demiHauteur, demiHauteur)); // gauche
+        return centre + new Vector2(demiLargeur, Random.Range(-demiHauteur, demiHauteur)); // droite
     }
 }

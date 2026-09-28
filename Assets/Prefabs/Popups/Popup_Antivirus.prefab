@@ -115,7 +115,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 150, y: 60}
+  m_SizeDelta: {x: 110, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2880699516531190765
 CanvasRenderer:
@@ -258,8 +258,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 14, y: -72}
-  m_SizeDelta: {x: 229, y: 160}
+  m_AnchoredPosition: {x: 0, y: -70}
+  m_SizeDelta: {x: 260, y: 170}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &3901299933454761720
 GameObject:
@@ -339,7 +339,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 327 virus !
+  m_Text: HEHEEHE
 --- !u!1 &6625432101428613797
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,7 +446,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.7, y: 0.7}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &5133143850848365918
 MonoBehaviour:
@@ -506,7 +506,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 257, y: 240}
+  m_SizeDelta: {x: 260, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5127785851317324921
 Canvas:
@@ -554,7 +554,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 2
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &5441210469454685658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -650,4 +650,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Fermer
+  m_Text: Close

@@ -64,6 +64,13 @@ public class Popup : MonoBehaviour
         else fenetre.anchoredPosition = Vector2.zero;
     }
 
+    // pour les click souris (en gros quand on veut une action style cocher une case plutot que tout faire)
+    public void Action()
+    {
+        this.Interaction();
+        // on va ajouter ici pour slider manuellement ou cocher les cases
+    }
+
     // branchée sur les boutons (OnClick) dans l'Inspector et appelée par les scripts d'interaction, les souris et le logo DVD
     public void Interaction()
     {

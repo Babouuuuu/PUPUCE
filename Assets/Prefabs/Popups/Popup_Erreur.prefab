@@ -181,7 +181,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.7, y: 0.7}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &47233545144664515
 MonoBehaviour:
@@ -289,7 +289,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 2
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &410350344049744026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -509,12 +509,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 47233545144664515}
-        m_TargetAssemblyTypeName: Popup, PupuceTemp
-        m_MethodName: Interaction
-        m_Mode: 0
+        m_TargetAssemblyTypeName: Popup, Assembly-CSharp
+        m_MethodName: Trembler
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -721,12 +721,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 47233545144664515}
-        m_TargetAssemblyTypeName: Popup, PupuceTemp
-        m_MethodName: Trembler
-        m_Mode: 0
+        m_TargetAssemblyTypeName: Popup, Assembly-CSharp
+        m_MethodName: Interaction
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

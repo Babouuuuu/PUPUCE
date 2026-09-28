@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     [Tooltip("XP à gagner pour remplir la barre et finir le niveau")]
     public int xpPourFinir = 150;
     [Tooltip("Paliers d'upgrade : 0 = barre vide, 1 = barre pleine. Dans l'ordre croissant !")]
-    public float[] paliers = { 0.07f, 0.19f, 0.32f, 0.46f, 0.63f, 0.81f }; // les 6 repères du Figma
+    public float[] paliers = { 0.05f, 0.15f, 0.30f, 0.45f, 0.60f, 0.75f, 0.9f }; // Par defaut
 
     [Header("Objets de la scène")]
     public Joueur joueur;

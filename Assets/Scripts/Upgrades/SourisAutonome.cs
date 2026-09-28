@@ -39,7 +39,7 @@ public class SourisAutonome : MonoBehaviour
         if (Time.time >= heureDuClic)
         {
             cible.cibleeParUneSouris = false;
-            cible.Interaction();
+            cible.Action();
             cible = null;
         }
     }

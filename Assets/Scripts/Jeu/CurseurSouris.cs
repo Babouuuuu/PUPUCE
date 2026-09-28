@@ -20,8 +20,7 @@ public class CurseurSouris : MonoBehaviour
 
         // convertit la position de la souris (en pixels de l'écran) en position dans l'interface
         Vector2 positionEcran = Mouse.current.position.ReadValue();
-        RectTransformUtility.ScreenPointToLocalPointInRectangle((RectTransform)canvas.transform, positionEcran,
-                                                                canvas.worldCamera, out Vector2 position);
+        RectTransformUtility.ScreenPointToLocalPointInRectangle((RectTransform)canvas.transform, positionEcran, canvas.worldCamera, out Vector2 position);
         rectTransform.anchoredPosition = position;
     }
 
