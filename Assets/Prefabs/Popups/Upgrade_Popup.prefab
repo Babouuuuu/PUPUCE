@@ -1303,8 +1303,8 @@ Canvas:
   m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1204686325
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &7392493097804606069
 MonoBehaviour:
@@ -1725,7 +1725,7 @@ GameObject:
   - component: {fileID: 9083088912397906312}
   - component: {fileID: 9071133334834155471}
   m_Layer: 0
-  m_Name: Popup_Upgrade
+  m_Name: Upgrade_Popup
   m_TagString: PopUpgrade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1838,7 +1838,7 @@ MonoBehaviour:
   fenetre: {fileID: 6220959982625158480}
   fond: {fileID: 7529238573743911613}
   titre: {fileID: 6740310226263943913}
-  cibleeParUneSouris: 0
+  cibleeParUneSouris: 1
   cibleeParClippy: 0
   bloquee: 0
 --- !u!114 &9071133334834155471

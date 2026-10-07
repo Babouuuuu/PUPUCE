@@ -21,7 +21,7 @@ public class Popup : MonoBehaviour
     public Text titre;
 
     // utilisés par les souris et Clippy pour ne pas viser tous la même popup (en gros on les definie a True quand deja cibler par le type)
-    [HideInInspector] public bool cibleeParUneSouris;
+    public bool cibleeParUneSouris;
     [HideInInspector] public bool cibleeParClippy;
     [HideInInspector] public bool bloquee;
 
