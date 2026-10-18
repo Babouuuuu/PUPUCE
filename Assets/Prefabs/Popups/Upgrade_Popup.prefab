@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5260287443137759213}
   - component: {fileID: 5015379677801504752}
   - component: {fileID: 5081505060949742908}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 8534967675549981606}
   - component: {fileID: 6763180839337611527}
   - component: {fileID: 2070284375240559793}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Nom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 3486562762147440567}
   - component: {fileID: 2093018014451251573}
   - component: {fileID: 6740310226263943913}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Titre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 8085681005222753856}
   - component: {fileID: 6834397959224524705}
   - component: {fileID: 1562167781800531281}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Texte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -323,7 +323,7 @@ GameObject:
   - component: {fileID: 6606027319479288229}
   - component: {fileID: 6030265326282742910}
   - component: {fileID: 7168252288142491993}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Niveau
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -402,7 +402,7 @@ GameObject:
   - component: {fileID: 997634763623022150}
   - component: {fileID: 2262528456427526143}
   - component: {fileID: 322259204542750029}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Niveau
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -481,7 +481,7 @@ GameObject:
   - component: {fileID: 5677826357278099027}
   - component: {fileID: 6949580368028869876}
   - component: {fileID: 2719249063646898087}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CarteClippy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -560,7 +560,7 @@ GameObject:
   - component: {fileID: 4476699748968114684}
   - component: {fileID: 41287357562166538}
   - component: {fileID: 3809411321051970759}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CarteSourisautonome
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -639,7 +639,7 @@ GameObject:
   - component: {fileID: 4761379818575811182}
   - component: {fileID: 8702055228815352152}
   - component: {fileID: 6132873194821095618}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CarteLogoDVD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -718,7 +718,7 @@ GameObject:
   - component: {fileID: 1033187936114469709}
   - component: {fileID: 5143811397360216562}
   - component: {fileID: 4744957071150840357}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Texte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -797,7 +797,7 @@ GameObject:
   - component: {fileID: 2331014575379968838}
   - component: {fileID: 9005913598985471914}
   - component: {fileID: 1926131843295044454}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Niveau
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -876,7 +876,7 @@ GameObject:
   - component: {fileID: 4563952343917160464}
   - component: {fileID: 4051440896149994629}
   - component: {fileID: 2236891734075268151}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -952,7 +952,7 @@ GameObject:
   - component: {fileID: 1718026082456686402}
   - component: {fileID: 6566801510760680562}
   - component: {fileID: 6170564085510193022}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BoutonInstaller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1096,7 +1096,7 @@ GameObject:
   - component: {fileID: 6220959982625158480}
   - component: {fileID: 8684566809367893577}
   - component: {fileID: 7529238573743911613}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fenetre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1175,7 +1175,7 @@ GameObject:
   - component: {fileID: 1141943277064387444}
   - component: {fileID: 1206226132034001436}
   - component: {fileID: 9134480414108434429}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Nom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1255,7 +1255,7 @@ GameObject:
   - component: {fileID: 3885255839472152731}
   - component: {fileID: 7392493097804606069}
   - component: {fileID: 5165667748971915319}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1357,7 +1357,7 @@ GameObject:
   - component: {fileID: 4301157953960542480}
   - component: {fileID: 1048082927843540604}
   - component: {fileID: 904135224355328050}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1433,7 +1433,7 @@ GameObject:
   - component: {fileID: 4325060249888636333}
   - component: {fileID: 6380467296377294032}
   - component: {fileID: 8944118866587915715}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BoutonInstaller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1578,7 +1578,7 @@ GameObject:
   - component: {fileID: 3186929875715927648}
   - component: {fileID: 2360725438268207363}
   - component: {fileID: 3822768131326466099}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BoutonInstaller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1724,9 +1724,9 @@ GameObject:
   - component: {fileID: 3141139679730481484}
   - component: {fileID: 9083088912397906312}
   - component: {fileID: 9071133334834155471}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Upgrade_Popup
-  m_TagString: PopUpgrade
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1874,7 +1874,7 @@ GameObject:
   - component: {fileID: 5705489628258454466}
   - component: {fileID: 8904923584952405429}
   - component: {fileID: 6440063122331711739}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Texte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1953,7 +1953,7 @@ GameObject:
   - component: {fileID: 3307681889694037289}
   - component: {fileID: 4775772264252312031}
   - component: {fileID: 3343385759703851706}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Nom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
