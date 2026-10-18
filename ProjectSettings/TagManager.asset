@@ -42,6 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Bosses
+    uniqueID: 2831036223
+    locked: 0
   - name: PopUpgrade
     uniqueID: 3090280971
     locked: 0
