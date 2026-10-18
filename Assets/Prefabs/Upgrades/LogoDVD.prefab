@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1267680319538818252}
   - component: {fileID: 6818144850403153549}
   - component: {fileID: 6275364403634930628}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LogoDVD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 5861745440802725076}
   - component: {fileID: 8959868964757267137}
   - component: {fileID: 573269027137911922}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Trainee
   m_TagString: Untagged
   m_Icon: {fileID: 0}

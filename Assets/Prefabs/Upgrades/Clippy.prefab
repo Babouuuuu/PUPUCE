@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9153180072144217843}
   - component: {fileID: 7212385457451834449}
   - component: {fileID: 2078005358061835018}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Clippy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 1659408932230805649}
   - component: {fileID: 363341721382424330}
   - component: {fileID: 8611517620332233079}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Trainee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
