@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2f0a2a39cbd1dc243bb56da09df39761
+guid: 7709c1f695320954aba4f10a1eec6805
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3402567308163750799
-    second: SXJDFE7T1_web_0
+      213: 2334268037946204560
+    second: Minecraft-889x500 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -98,17 +98,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SXJDFE7T1_web_0
+      name: Minecraft-889x500 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 747
-        height: 529
+        width: 499
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,8 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 174ea809f07a7c0d0800000000000000
-      internalID: -3402567308163750799
+      spriteID: 091e45cb96cf46020800000000000000
+      internalID: 2334268037946204560
       vertices: []
       indices: 
       edges: []
@@ -137,7 +150,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SXJDFE7T1_web_0: -3402567308163750799
+      Minecraft-889x500 1_0: 2334268037946204560
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

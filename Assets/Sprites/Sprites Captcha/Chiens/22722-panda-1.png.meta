@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 31779936a119e9e4bb174d8c7f7918de
+guid: cd0dca017735d5143ab59829b87599b3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 532282208441007744
-    second: images (1)_0
+      213: 9194136017259179759
+    second: 22722-panda-1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -98,17 +98,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: images (1)_0
+      name: 22722-panda-1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 399
-        height: 501
+        width: 1000
+        height: 1009
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,8 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 08ef26239db036700800000000000000
-      internalID: 532282208441007744
+      spriteID: feeab5dbef1289f70800000000000000
+      internalID: 9194136017259179759
       vertices: []
       indices: 
       edges: []
@@ -137,7 +150,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      images (1)_0: 532282208441007744
+      22722-panda-1_0: 9194136017259179759
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

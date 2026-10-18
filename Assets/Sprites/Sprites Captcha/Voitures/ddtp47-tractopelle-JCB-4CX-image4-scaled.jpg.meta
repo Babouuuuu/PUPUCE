@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9126c694ed7580344a5a98a7a41a9c99
+guid: 6741a7ddbace9b7469080bb10b2cf512
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7192027734560456456
-    second: como-llegar-mejor-al-suelo-bmw-s-1000-rr-2023-859x800_0
+      213: -3446075353931406639
+    second: ddtp47-tractopelle-JCB-4CX-image4-scaled_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -98,17 +98,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: como-llegar-mejor-al-suelo-bmw-s-1000-rr-2023-859x800_0
+      name: ddtp47-tractopelle-JCB-4CX-image4-scaled_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 859
-        height: 800
+        width: 2560
+        height: 2146
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,8 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8f044c261e8c03c90800000000000000
-      internalID: -7192027734560456456
+      spriteID: 1d2a0b349b41d20d0800000000000000
+      internalID: -3446075353931406639
       vertices: []
       indices: 
       edges: []
@@ -137,7 +150,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      como-llegar-mejor-al-suelo-bmw-s-1000-rr-2023-859x800_0: -7192027734560456456
+      ddtp47-tractopelle-JCB-4CX-image4-scaled_0: -3446075353931406639
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

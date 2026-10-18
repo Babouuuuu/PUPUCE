@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 40481fe06af25e54b99b2726a026d5bc
+guid: 2f0a2a39cbd1dc243bb56da09df39761
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2284524204985130404
-    second: 8daad04d-voiture-electrique-vs-thermique-l-inversion-des-prix-que-l-on-n-attendait-plus__1200_678__5-439-4199-2641_0
+      213: -3402567308163750799
+    second: SXJDFE7T1_web_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -98,17 +98,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 8daad04d-voiture-electrique-vs-thermique-l-inversion-des-prix-que-l-on-n-attendait-plus__1200_678__5-439-4199-2641_0
+      name: SXJDFE7T1_web_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1200
-        height: 678
+        width: 747
+        height: 529
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,8 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c526419e65dbb40e0800000000000000
-      internalID: -2284524204985130404
+      spriteID: 174ea809f07a7c0d0800000000000000
+      internalID: -3402567308163750799
       vertices: []
       indices: 
       edges: []
@@ -137,7 +150,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      8daad04d-voiture-electrique-vs-thermique-l-inversion-des-prix-que-l-on-n-attendait-plus__1200_678__5-439-4199-2641_0: -2284524204985130404
+      SXJDFE7T1_web_0: -3402567308163750799
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

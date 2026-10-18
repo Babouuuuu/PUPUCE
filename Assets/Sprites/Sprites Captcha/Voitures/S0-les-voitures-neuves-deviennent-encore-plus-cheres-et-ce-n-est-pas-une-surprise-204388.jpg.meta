@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 84bc94647b4588548bc8346cfeb0e1f7
+guid: 8630371e139632a47b9da200f73d6985
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6132664767072138234
-    second: mercedes-benz-nextgenh2-truck-2026_0
+      213: -374221522003260363
+    second: S0-les-voitures-neuves-deviennent-encore-plus-cheres-et-ce-n-est-pas-une-surprise-204388_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -98,17 +98,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mercedes-benz-nextgenh2-truck-2026_0
+      name: S0-les-voitures-neuves-deviennent-encore-plus-cheres-et-ce-n-est-pas-une-surprise-204388_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1920
-        height: 1080
+        width: 2903
+        height: 2045
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,8 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: af373e70d1a9b1550800000000000000
-      internalID: 6132664767072138234
+      spriteID: 53c80b9228f7ecaf0800000000000000
+      internalID: -374221522003260363
       vertices: []
       indices: 
       edges: []
@@ -137,7 +150,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      mercedes-benz-nextgenh2-truck-2026_0: 6132664767072138234
+      S0-les-voitures-neuves-deviennent-encore-plus-cheres-et-ce-n-est-pas-une-surprise-204388_0: -374221522003260363
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
