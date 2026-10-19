@@ -24,6 +24,14 @@ public class SpawnerPopups : MonoBehaviour
         [Tooltip("Le boss spawn a partir de ce stade de progression (0-1)")]
         public float progression = 0f;
     }
+    
+    [System.Serializable]
+    public class TypeUpgrade
+    {
+        public GameObject prefab;
+        [Tooltip("Le boss spawn a partir de ce stade de progression (0-1)")]
+        public float progression = 0f;
+    }
 
     [Header("Popups normales")]
     [Tooltip("On peut en mettre une plusieurs fois dans la liste pour qu'elle apparaisse plus souvent")]
@@ -41,9 +49,12 @@ public class SpawnerPopups : MonoBehaviour
     [Tooltip("La liste des boss avec le moment de progression a laquel ils spawn")]
     public TypeBoss[] boss;
 
+    [Header("Upgrades")]
+    public TypeUpgrade[] upgrade;
 
     float prochainePopup = 1f;
     int numeroBoss = 0;
+    int numeroUpgrade = 0;
     int ordreAffichage = 10000; // chaque nouvelle popup s'affiche derrière les précédentes ducoup on laisse de la marge
 
     void Awake()
@@ -72,6 +83,13 @@ public class SpawnerPopups : MonoBehaviour
         {
             FaireApparaitre(boss[numeroBoss].prefab, PositionHorsEcran());
             numeroBoss++;
+        }
+        
+        // on fait spawn les upgrades
+        if (numeroUpgrade < upgrade.Count() && jeu.Progression() >= upgrade[numeroUpgrade].progression)
+        {
+            FaireApparaitre(upgrade[numeroUpgrade].prefab, PositionHorsEcran());
+            numeroUpgrade++;
         }
     }
 

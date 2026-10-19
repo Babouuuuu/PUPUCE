@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6473523787355587776}
   - component: {fileID: 399176467951248139}
   - component: {fileID: 2002576139345066718}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SourisAutonome
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56218459e7318c54e89cc42d43a60b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: PupuceTemp::SourisAutonome
-  delaiEntreDeuxPopups: 2
+  delaiEntreDeuxPopups: 2.5
 --- !u!1 &7204450166767463065
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 4387831927931118351}
   - component: {fileID: 4610493947342475221}
   - component: {fileID: 5421520217468412506}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Trainee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
