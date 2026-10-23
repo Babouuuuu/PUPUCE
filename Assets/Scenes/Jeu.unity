@@ -4523,7 +4523,7 @@ MonoBehaviour:
   - 0.75
   - 0.9
   joueur: {fileID: 1991580280}
-  ecranUpgradePopup: {fileID: 9071133334834155471, guid: 35df5adca2927824a9ee3d94f30776da, type: 3}
+  ecranUpgrade: {fileID: 2122027622}
   ecranGameOver: {fileID: 1753477829}
   texteGameOver: {fileID: 360991896}
   ecranVictoire: {fileID: 1979751482}

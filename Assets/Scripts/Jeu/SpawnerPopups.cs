@@ -49,8 +49,8 @@ public class SpawnerPopups : MonoBehaviour
     [Tooltip("La liste des boss avec le moment de progression a laquel ils spawn")]
     public TypeBoss[] boss;
 
-    [Header("Upgrades")]
-    public TypeUpgrade[] upgrade;
+    /*[Header("Upgrades")]
+    public TypeUpgrade[] upgrade;*/
 
     float prochainePopup = 1f;
     int numeroBoss = 0;
@@ -86,11 +86,11 @@ public class SpawnerPopups : MonoBehaviour
         }
         
         // on fait spawn les upgrades
-        if (numeroUpgrade < upgrade.Count() && jeu.Progression() >= upgrade[numeroUpgrade].progression)
+        /*if (numeroUpgrade < upgrade.Count() && jeu.Progression() >= upgrade[numeroUpgrade].progression)
         {
             FaireApparaitre(upgrade[numeroUpgrade].prefab, PositionHorsEcran());
             numeroUpgrade++;
-        }
+        }*/
     }
 
     public void FaireApparaitre(GameObject prefab, Vector2 position)

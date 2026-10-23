@@ -26,8 +26,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Objets de la scène")]
     public Joueur joueur;
-    public EcranUpgradePopup ecranUpgradePopup;
-    // public EcranUpgrade ecranUpgrade;**
+    public EcranUpgrade ecranUpgrade;
     public GameObject ecranGameOver;
     public Text texteGameOver;
     public GameObject ecranVictoire;
@@ -82,13 +81,11 @@ public class GameManager : MonoBehaviour
 
     void OuvrirUpgradeSiBesoin()
     {
-        // if (upgradesEnAttente > 0 && !ecranUpgrade.gameObject.activeSelf)**
-        if (upgradesEnAttente > 0 && !ecranUpgradePopup.gameObject.activeSelf)
+        if (upgradesEnAttente > 0 && !ecranUpgrade.gameObject.activeSelf)
         {
             upgradesEnAttente--;
-            // Time.timeScale = 0f; // met le jeu en pause**
-            ecranUpgradePopup.Ouvrir();
-            // ecranUpgrade.Ouvrir();**
+            Time.timeScale = 0f; // met le jeu en pause
+            ecranUpgrade.Ouvrir();
         }
     }
 
