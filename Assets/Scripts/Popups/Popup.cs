@@ -24,6 +24,7 @@ public class Popup : MonoBehaviour
     public bool cibleeParUneSouris;
     [HideInInspector] public bool cibleeParClippy;
     [HideInInspector] public bool bloquee;
+    [HideInInspector]  bool cibleeParZipBombe;
 
     int interactionsRestantes;
     string titreDeBase;
@@ -31,6 +32,7 @@ public class Popup : MonoBehaviour
     Rigidbody2D rb;
     float finBlocage;
     float finTremblement;
+    
 
     // OnEnable / OnDisable -> appelés quand l'objet apparaît / disparaît pour les ajouter ou les virer de la list
     void OnEnable() { list.Add(this); }
