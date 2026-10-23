@@ -2,34 +2,23 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
+using Unity.VisualScripting;
 
 public class LineGenerator : MonoBehaviour
 {
     public GameObject linePrefab;
     public Image image;
-    private PaintingArea paintingArea;
-    Line activeLine;
+    public PaintingArea paintingArea;
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject() == true)
+        if(Input.GetMouseButtonDown(0) && paintingArea.paintingMode == true) 
         {
-            GameObject newLine = Instantiate(linePrefab);
-            activeLine = newLine.GetComponent<Line>();
-            newLine.transform.SetParent(image.transform);
-        }
-
-        if(Input.GetMouseButtonUp(0))
-        {
-            activeLine = null;
-        }
-
-        if(activeLine != null)
-        {
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            activeLine.UpdateLine(mousePosition);
+            Vector2 mousePosition = Input.mousePosition;
+            Vector2 objectPosition = Camera.current.ScreenToWorldPoint(mousePosition);
+            Instantiate(linePrefab, objectPosition, Quaternion.identity);
+            linePrefab.transform.SetParent(image.transform);
         }
     }
-
 
 }

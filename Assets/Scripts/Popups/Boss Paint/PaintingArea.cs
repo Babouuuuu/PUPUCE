@@ -1,20 +1,19 @@
 using UnityEngine;
-using UnityEngine.UI;
+using System.Collections;
 using UnityEngine.EventSystems;
-using UnityEngine.Rendering;
+
 
 public class PaintingArea : MonoBehaviour
 {
-    public GameObject mouse;
     public bool paintingMode = false;
 
-    void OnCollisionEnter2D(Collision2D collision)
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("no paint");
+        Debug.Log("paint");
         paintingMode = true;
     }
 
-    void OnCoisionExit2D(Collision2D collision)
+    public void OnPointerExit(PointerEventData eventData)
     {
         Debug.Log("no paint");
         paintingMode = false;
