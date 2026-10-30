@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 6264244040782528711}
   - component: {fileID: 4084186051863100540}
   - component: {fileID: 8007661496702778863}
-  m_Layer: 0
+  - component: {fileID: 4964864883617412640}
+  m_Layer: 6
   m_Name: Boss_Paint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,6 +130,21 @@ MonoBehaviour:
   cibleeParUneSouris: 1
   cibleeParClippy: 0
   bloquee: 0
+--- !u!114 &4964864883617412640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238389332868832667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea684fea75302e47ba877973326f867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LineGenerator
+  linePrefab: {fileID: 5417445057218191902, guid: c7260fca11ddadf438e27a23444a9204, type: 3}
+  image: {fileID: 5637901557051602764}
+  paintingArea: {fileID: 3023053814360203969}
 --- !u!1 &284686781268740523
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +157,7 @@ GameObject:
   - component: {fileID: 5751102601361032600}
   - component: {fileID: 3132299346212328387}
   - component: {fileID: 3069679214568062965}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +277,7 @@ GameObject:
   - component: {fileID: 246570423999016154}
   - component: {fileID: 3329417008125477513}
   - component: {fileID: 2464044277075214679}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Magenta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,9 +396,9 @@ GameObject:
   - component: {fileID: 6632853427049916074}
   - component: {fileID: 7791617361655573256}
   - component: {fileID: 5637901557051602764}
-  - component: {fileID: 5909535948861137150}
   - component: {fileID: 5518892967452085784}
-  m_Layer: 5
+  - component: {fileID: 3023053814360203969}
+  m_Layer: 6
   m_Name: PaintingArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,20 +462,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5909535948861137150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2642707766257806836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ea684fea75302e47ba877973326f867, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LineGenerator
-  linePrefab: {fileID: 4759109831897566713, guid: 20c3575a8f0f1f14cb737dcab06d6623, type: 3}
-  image: {fileID: 5637901557051602764}
 --- !u!331 &5518892967452085784
 SpriteMask:
   m_ObjectHideFlags: 0
@@ -519,6 +521,19 @@ SpriteMask:
   m_IsCustomRangeActive: 0
   m_SpriteSortPoint: 0
   m_MaskSource: 0
+--- !u!114 &3023053814360203969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2642707766257806836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6590a33bdaa63b44c944ce3569372911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintingArea
+  paintingMode: 0
 --- !u!1 &2845425062864271307
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,7 +546,7 @@ GameObject:
   - component: {fileID: 6198491371276413163}
   - component: {fileID: 1638398277585144636}
   - component: {fileID: 8490314708181893151}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -639,7 +654,7 @@ GameObject:
   - component: {fileID: 8711151138973736545}
   - component: {fileID: 493834778616486309}
   - component: {fileID: 349083427111059627}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -717,7 +732,7 @@ GameObject:
   - component: {fileID: 8203817408799689309}
   - component: {fileID: 7211089141986581186}
   - component: {fileID: 6966051732249818190}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -837,7 +852,7 @@ GameObject:
   - component: {fileID: 5053970690588759867}
   - component: {fileID: 8629554635571871542}
   - component: {fileID: 7175826897248732493}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -956,7 +971,7 @@ GameObject:
   - component: {fileID: 6042731432159211840}
   - component: {fileID: 5844435708581910988}
   - component: {fileID: 6993182543735447272}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1036,7 +1051,7 @@ GameObject:
   - component: {fileID: 7047114906724293559}
   - component: {fileID: 175537153657196710}
   - component: {fileID: 8817246696380677944}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Yellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1156,7 +1171,7 @@ GameObject:
   - component: {fileID: 2980820417597687310}
   - component: {fileID: 8681188835180158867}
   - component: {fileID: 8359885230722542571}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Cyan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
