@@ -28,6 +28,7 @@ public class LineGenerator : MonoBehaviour
     public Image image;
     public PaintingArea paintingArea;
     private bool mouseIsPressed;
+    public InterractionPaint interractionPaint;
 
     void Start()
     {
@@ -36,7 +37,7 @@ public class LineGenerator : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0)) 
+        if(Input.GetMouseButtonDown(0) && paintingArea.paintingMode == true) 
         {
             mouseIsPressed = true;
         }
@@ -53,36 +54,42 @@ public class LineGenerator : MonoBehaviour
                 Vector2 objectPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 GameObject newLine = Instantiate(linePrefabRed, objectPosition, Quaternion.identity);
                 newLine.transform.SetParent(image.transform);
+                interractionPaint.isRedColorIn = true;
             }
             else if(toggleYellow.isOn == true)
             {
                 Vector2 objectPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 GameObject newLine = Instantiate(linePrefabYellow, objectPosition, Quaternion.identity);
                 newLine.transform.SetParent(image.transform);
+                interractionPaint.isYellowColorIn = true;
             }
             else if(toggleGreen.isOn == true)
             {
                 Vector2 objectPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 GameObject newLine = Instantiate(linePrefabGreen, objectPosition, Quaternion.identity);
                 newLine.transform.SetParent(image.transform);
+                interractionPaint.isGreenColorIn = true;
             }
             else if(toggleCyan.isOn == true)
             {
                 Vector2 objectPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 GameObject newLine = Instantiate(linePrefabCyan, objectPosition, Quaternion.identity);
                 newLine.transform.SetParent(image.transform);
+                interractionPaint.isCyanColorIn = true;
             }
             else if(toggleBlue.isOn == true)
             {
                 Vector2 objectPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 GameObject newLine = Instantiate(linePrefabBlue, objectPosition, Quaternion.identity);
                 newLine.transform.SetParent(image.transform);
+                interractionPaint.isBlueColorIn = true;
             }
             else if(toggleMagenta.isOn == true)
             {
                 Vector2 objectPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 GameObject newLine = Instantiate(linePrefabMagenta, objectPosition, Quaternion.identity);
                 newLine.transform.SetParent(image.transform);
+                interractionPaint.isMagentaColorIn = true;
             }
             /*else if(toggleGomme.isOn == true)
             {

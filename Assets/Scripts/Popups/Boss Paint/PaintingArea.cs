@@ -6,16 +6,23 @@ using UnityEngine.EventSystems;
 public class PaintingArea : MonoBehaviour
 {
     public bool paintingMode = false;
+    public BoxCollider2D boxCollider;
 
-    public void OnPointerEnter(PointerEventData eventData)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("paint");
-        paintingMode = true;
+        if (collision.gameObject.CompareTag("Cursor"))
+        {
+            paintingMode = true;
+            Debug.Log("Le joueur est entré dans la zone de peinture.");
+        }
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("no paint");
-        paintingMode = false;
+        if (collision.gameObject.CompareTag("Cursor"))
+        {
+            paintingMode = false;
+            Debug.Log("Le joueur est sorti de la zone de peinture.");
+        }
     }
 }
