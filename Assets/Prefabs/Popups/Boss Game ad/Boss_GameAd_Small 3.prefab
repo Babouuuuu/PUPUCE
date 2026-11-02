@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6704160d879174b8cd8fe6cbdee89b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: PupuceTemp::Popup
-  vitesse: 1
+  vitesse: 1.2
   interactionsNecessaires: 1
   xp: 2
   fenetre: {fileID: 1315405266395380986}

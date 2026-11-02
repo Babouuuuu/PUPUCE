@@ -31,6 +31,8 @@ public class PopupGameAd : MonoBehaviour
     Rigidbody2D rb;
     float finBlocage;
     float finTremblement;
+    public GameObject[] popups;
+    public GameObject slimePrefab;
 
     // OnEnable / OnDisable -> appelés quand l'objet apparaît / disparaît pour les ajouter ou les virer de la list
     void OnEnable() { list.Add(this); }
@@ -79,12 +81,14 @@ public class PopupGameAd : MonoBehaviour
         interactionsRestantes--;
         if (interactionsRestantes <= 0)
         {
-            GameManager.instance.PopupFermee(xp); //on envoi l'xp pour la progression
+            GameManager.instance.PopupFermee(xp);//on envoi l'xp pour la progression
+            Dupliquer(transform.position); 
             Destroy(gameObject); // et on supprime la popup
         }
         else
         {
             MettreAJourTitre();
+            FaireApparaitreSlime(transform.position); // on fait spawn un slime a coté de la popup pour faire chier le joueur
         }
     }
 
@@ -98,7 +102,7 @@ public class PopupGameAd : MonoBehaviour
     public void Reproduction()
     {
         Trembler();
-        SpawnerPopups.instance.FaireApparaitrePres(transform.position);
+        FaireApparaitreSlime(transform.position);
     }
 
     // appelé par Clippy -> Une popup "Static" ne bouge plus et bloque les autres comme un mur
@@ -123,7 +127,7 @@ public class PopupGameAd : MonoBehaviour
     public void Detruire()
     {
         interactionsRestantes = 0;
-        Destroy(gameObject);
+        Destroy(gameObject); 
     }
 
     // bon je vais pas expliquer celle la 
@@ -131,5 +135,20 @@ public class PopupGameAd : MonoBehaviour
     {
         // pour les popups a plusieurs interactions -> on affiche combien il en reste ex: "WinRAR (3)"
         if (interactionsNecessaires > 1) titre.text = titreDeBase + " (" + interactionsRestantes + ")";
+    }
+
+    void Dupliquer(Vector2 position)
+    {
+        foreach (GameObject popup in popups)
+        {
+            Instantiate(popup, position, Quaternion.identity);
+        }
+    }
+
+    void FaireApparaitreSlime(Vector2 position)
+    {
+        Vector2 joueur = GameManager.instance.joueur.transform.position;
+        Vector2 aLOppose = (position - joueur).normalized;
+        SpawnerPopups.instance.FaireApparaitre(slimePrefab, position + aLOppose * 1.5f);
     }
 }

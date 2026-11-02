@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 6099550851112425374}
   - component: {fileID: 4564694431276328433}
   - component: {fileID: 9158770058025305229}
-  - component: {fileID: 5174668771112598194}
+  - component: {fileID: 141973773598785062}
   m_Layer: 0
   m_Name: Boss_GameAd_Medium 1
   m_TagString: Untagged
@@ -290,7 +290,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.5, y: 2.5}
   m_EdgeRadius: 0
---- !u!114 &5174668771112598194
+--- !u!114 &141973773598785062
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -299,18 +299,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 509509547016028188}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e6704160d879174b8cd8fe6cbdee89b, type: 3}
+  m_Script: {fileID: 11500000, guid: a3851ff4a28b3ac4b9fe20fc30547cc1, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: PupuceTemp::Popup
+  m_EditorClassIdentifier: Assembly-CSharp::PopupGameAd
   vitesse: 0.8
   interactionsNecessaires: 2
-  xp: 2
+  xp: 1
   fenetre: {fileID: 1315405266395380986}
   fond: {fileID: 8571164707745648043}
   titre: {fileID: 3455365753303319046}
-  cibleeParUneSouris: 1
+  cibleeParUneSouris: 0
   cibleeParClippy: 0
   bloquee: 0
+  popups:
+  - {fileID: 509509547016028188, guid: 66cc214c68d5fe446bb902e8321c7c67, type: 3}
+  - {fileID: 509509547016028188, guid: 69209d54dc0430b4c85f7f5c2ad373dc, type: 3}
+  slimePrefab: {fileID: 509509547016028188, guid: b7d9d74a7ab07c74bb78fabfdd28cad1, type: 3}
 --- !u!1 &531496048976806901
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,13 +744,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5174668771112598194}
-        m_TargetAssemblyTypeName: Popup, PupuceTemp
+      - m_Target: {fileID: 141973773598785062}
+        m_TargetAssemblyTypeName: PopupGameAd, Assembly-CSharp
         m_MethodName: Interaction
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
