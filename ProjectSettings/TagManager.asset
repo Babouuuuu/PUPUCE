@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Upgrades
+  - Cursor
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - UI
   - SpecialPop
   - Upgrades
-  - 
+  - IdiotPop
   - 
   - 
   - 

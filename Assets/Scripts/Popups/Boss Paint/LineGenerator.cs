@@ -1,213 +1,108 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.Rendering;
+using Unity.VisualScripting;
+using System.Collections;
 
 public class LineGenerator : MonoBehaviour
 {
+    [Header("Prefabs lignes")]
     public GameObject linePrefabRed;
-    public GameObject linePrefabGreen;
-    public GameObject linePrefabBlue;
     public GameObject linePrefabYellow;
-    public GameObject linePrefabMagenta;
+    public GameObject linePrefabGreen;
     public GameObject linePrefabCyan;
+    public GameObject linePrefabBlue;
+    public GameObject linePrefabMagenta;
+
+    [Header("Toggles couleurs")]
+    public Toggle toggleRed;
+    public Toggle toggleYellow;
+    public Toggle toggleGreen;
+    public Toggle toggleCyan;
+    public Toggle toggleBlue;
+    public Toggle toggleMagenta;
+    //public Toggle toggleGomme;
+
+    [Header("Others")]
     public Image image;
-    Line activeLine;
+    public PaintingArea paintingArea;
+    private bool mouseIsPressed;
+    public InterractionPaint interractionPaint;
 
-    private void Start()
+    void Start()
     {
-        ChooseColorRed();
+        mouseIsPressed = false;
     }
-    
-    public void ChooseColorRed()
-    {
-        linePrefabRed.SetActive(true);
-        linePrefabGreen.SetActive(false);
-        linePrefabBlue.SetActive(false);
-        linePrefabYellow.SetActive(false);
-        linePrefabMagenta.SetActive(false);
-        linePrefabCyan.SetActive(false);
-    }
-
-    public void ChooseColorGreen()
-    {
-        linePrefabRed.SetActive(false);
-        linePrefabGreen.SetActive(true);
-        linePrefabBlue.SetActive(false);
-        linePrefabYellow.SetActive(false);
-        linePrefabMagenta.SetActive(false);
-        linePrefabCyan.SetActive(false);
-    }
-
-    public void ChooseColorBlue()
-    {
-        linePrefabRed.SetActive(false);
-        linePrefabGreen.SetActive(false);
-        linePrefabBlue.SetActive(true);
-        linePrefabYellow.SetActive(false);
-        linePrefabMagenta.SetActive(false);
-        linePrefabCyan.SetActive(false);
-    }
-
-    public void ChooseColorYellow()
-    {
-        linePrefabRed.SetActive(false);
-        linePrefabGreen.SetActive(false);
-        linePrefabBlue.SetActive(false);
-        linePrefabYellow.SetActive(true);
-        linePrefabMagenta.SetActive(false);
-        linePrefabCyan.SetActive(false);
-    }
-
-    public void ChooseColorMagenta()
-    {
-        linePrefabRed.SetActive(false);
-        linePrefabGreen.SetActive(false);
-        linePrefabBlue.SetActive(false);
-        linePrefabYellow.SetActive(false);
-        linePrefabMagenta.SetActive(true);
-        linePrefabCyan.SetActive(false);
-    }
-
-    public void ChooseColorCyan()
-    {
-        linePrefabRed.SetActive(false);
-        linePrefabGreen.SetActive(false);
-        linePrefabBlue.SetActive(false);
-        linePrefabYellow.SetActive(false);
-        linePrefabMagenta.SetActive(false);
-        linePrefabCyan.SetActive(true);
-    }
-
-
 
     void Update()
     {
-        if (linePrefabRed == true)
+        if(Input.GetMouseButtonDown(0)) 
         {
-            if(Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject() == true)
-            {
-                GameObject newLine = Instantiate(linePrefabRed);
-                activeLine = newLine.GetComponent<Line>();
-                newLine.transform.SetParent(image.transform);
-            }
-
-            if(Input.GetMouseButtonUp(0))
-            {
-                activeLine = null;
-            }
-
-            if(activeLine != null)
-            {
-                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                activeLine.UpdateLine(mousePosition);
-            }
+            mouseIsPressed = true;
         }
 
-        if (linePrefabGreen == true)
+        if(Input.GetMouseButtonUp(0))
         {
-            if(Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject() == true)
-            {
-                GameObject newLine = Instantiate(linePrefabGreen);
-                activeLine = newLine.GetComponent<Line>();
-                newLine.transform.SetParent(image.transform);
-            }
-
-            if(Input.GetMouseButtonUp(0))
-            {
-                activeLine = null;
-            }
-
-            if(activeLine != null)
-            {
-                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                activeLine.UpdateLine(mousePosition);
-            }
+            mouseIsPressed = false;
         }
 
-        if (linePrefabBlue == true)
+        if(mouseIsPressed == true && paintingArea.paintingMode == true)
         {
-            if(Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject() == true)
+            if(toggleRed.isOn == true)
             {
-                GameObject newLine = Instantiate(linePrefabBlue);
-                activeLine = newLine.GetComponent<Line>();
+                Vector2 objectPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                GameObject newLine = Instantiate(linePrefabRed, objectPosition, Quaternion.identity);
                 newLine.transform.SetParent(image.transform);
+                interractionPaint.isRedColorIn = true;
             }
-
-            if(Input.GetMouseButtonUp(0))
+            else if(toggleYellow.isOn == true)
             {
-                activeLine = null;
+                Vector2 objectPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                GameObject newLine = Instantiate(linePrefabYellow, objectPosition, Quaternion.identity);
+                newLine.transform.SetParent(image.transform);
+                interractionPaint.isYellowColorIn = true;
             }
-
-            if(activeLine != null)
+            else if(toggleGreen.isOn == true)
             {
-                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                activeLine.UpdateLine(mousePosition);
+                Vector2 objectPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                GameObject newLine = Instantiate(linePrefabGreen, objectPosition, Quaternion.identity);
+                newLine.transform.SetParent(image.transform);
+                interractionPaint.isGreenColorIn = true;
             }
+            else if(toggleCyan.isOn == true)
+            {
+                Vector2 objectPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                GameObject newLine = Instantiate(linePrefabCyan, objectPosition, Quaternion.identity);
+                newLine.transform.SetParent(image.transform);
+                interractionPaint.isCyanColorIn = true;
+            }
+            else if(toggleBlue.isOn == true)
+            {
+                Vector2 objectPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                GameObject newLine = Instantiate(linePrefabBlue, objectPosition, Quaternion.identity);
+                newLine.transform.SetParent(image.transform);
+                interractionPaint.isBlueColorIn = true;
+            }
+            else if(toggleMagenta.isOn == true)
+            {
+                Vector2 objectPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                GameObject newLine = Instantiate(linePrefabMagenta, objectPosition, Quaternion.identity);
+                newLine.transform.SetParent(image.transform);
+                interractionPaint.isMagentaColorIn = true;
+            }
+            /*else if(toggleGomme.isOn == true)
+            {
+                Vector2 objectPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Destroy.linePrefabMagenta.objectPosition.Quaternion.identity;
+            }*/
+            
+            Debug.Log("++ line");
         }
 
-        if (linePrefabYellow == true)
-        {
-            if(Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject() == true)
-            {
-                GameObject newLine = Instantiate(linePrefabYellow);
-                activeLine = newLine.GetComponent<Line>();
-                newLine.transform.SetParent(image.transform);
-            }
-
-            if(Input.GetMouseButtonUp(0))
-            {
-                activeLine = null;
-            }
-
-            if(activeLine != null)
-            {
-                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                activeLine.UpdateLine(mousePosition);
-            }
-        }
-
-        if (linePrefabMagenta == true)
-        {
-            if(Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject() == true)
-            {
-                GameObject newLine = Instantiate(linePrefabMagenta);
-                activeLine = newLine.GetComponent<Line>();
-                newLine.transform.SetParent(image.transform);
-            }
-
-            if(Input.GetMouseButtonUp(0))
-            {
-                activeLine = null;
-            }
-
-            if(activeLine != null)
-            {
-                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                activeLine.UpdateLine(mousePosition);
-            }
-        }
-
-        if (linePrefabCyan == true)
-        {
-            if(Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject() == true)
-            {
-                GameObject newLine = Instantiate(linePrefabCyan);
-                activeLine = newLine.GetComponent<Line>();
-                newLine.transform.SetParent(image.transform);
-            }
-
-            if(Input.GetMouseButtonUp(0))
-            {
-                activeLine = null;
-            }
-
-            if(activeLine != null)
-            {
-                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                activeLine.UpdateLine(mousePosition);
-            }
-        }
+        
     }
+
 
 
 }
