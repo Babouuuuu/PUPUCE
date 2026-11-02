@@ -258,9 +258,10 @@ GameObject:
   - component: {fileID: 114255528}
   - component: {fileID: 114255527}
   - component: {fileID: 114255526}
+  - component: {fileID: 114255529}
   m_Layer: 0
   m_Name: Curseur
-  m_TagString: Untagged
+  m_TagString: Cursor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -334,6 +335,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 114255524}
   m_CullTransparentMesh: 1
+--- !u!61 &114255529
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114255524}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 1.617096, y: -2.6878765}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 12.013741, y: 10.921108}
+  m_EdgeRadius: 0
 --- !u!1 &123602226
 GameObject:
   m_ObjectHideFlags: 0
@@ -4570,19 +4617,6 @@ MonoBehaviour:
     progression: 0.1
   - prefab: {fileID: 8322870660480292481, guid: ec1960ffd3c54ca4689ec483eda006df, type: 3}
     progression: 0.6
-  upgrade:
-  - prefab: {fileID: 7361244443201241132, guid: 35df5adca2927824a9ee3d94f30776da, type: 3}
-    progression: 0.05
-  - prefab: {fileID: 7361244443201241132, guid: 35df5adca2927824a9ee3d94f30776da, type: 3}
-    progression: 0.15
-  - prefab: {fileID: 7361244443201241132, guid: 35df5adca2927824a9ee3d94f30776da, type: 3}
-    progression: 0.3
-  - prefab: {fileID: 7361244443201241132, guid: 35df5adca2927824a9ee3d94f30776da, type: 3}
-    progression: 0.45
-  - prefab: {fileID: 7361244443201241132, guid: 35df5adca2927824a9ee3d94f30776da, type: 3}
-    progression: 0.75
-  - prefab: {fileID: 7361244443201241132, guid: 35df5adca2927824a9ee3d94f30776da, type: 3}
-    progression: 0.9
 --- !u!4 &1821158678
 Transform:
   m_ObjectHideFlags: 0

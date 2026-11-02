@@ -14,6 +14,7 @@ public class LayerOrderColor : MonoBehaviour
     public Renderer rendererCyan;
     public Renderer rendererBlue;
     public Renderer rendererMagenta;
+    public Canvas canvas;
     private int orderInLayer = 1;
 
 
@@ -24,7 +25,8 @@ public class LayerOrderColor : MonoBehaviour
         rendererGreen.sortingOrder = rendererGreen.sortingOrder = 2;
         rendererCyan.sortingOrder = rendererCyan.sortingOrder = 2;
         rendererBlue.sortingOrder = rendererBlue.sortingOrder = 2;
-        rendererMagenta.sortingOrder = rendererMagenta.sortingOrder = 2; 
+        rendererMagenta.sortingOrder = rendererMagenta.sortingOrder = 2;
+        canvas.sortingOrder = canvas.sortingOrder = 1;
     }
 
     public void ChooseRed()

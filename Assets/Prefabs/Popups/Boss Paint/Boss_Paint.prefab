@@ -177,6 +177,7 @@ MonoBehaviour:
   rendererCyan: {fileID: 3565064928309693642, guid: 85fbacfe68dd67741834d59c71384fe3, type: 3}
   rendererBlue: {fileID: 3565064928309693642, guid: b2b740add37094d4d901489463051049, type: 3}
   rendererMagenta: {fileID: 3565064928309693642, guid: 2f58c6c128493ab42b144d38a25fa272, type: 3}
+  canvas: {fileID: 6198491371276413163}
 --- !u!114 &194291878886706294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2316,7 +2317,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 194291878886706294}
         m_TargetAssemblyTypeName: InterractionPaint, Assembly-CSharp
-        m_MethodName: CliquerSuivant
+        m_MethodName: CliquerFinish
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

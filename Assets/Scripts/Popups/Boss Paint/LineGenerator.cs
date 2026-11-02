@@ -37,7 +37,7 @@ public class LineGenerator : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) && paintingArea.paintingMode == true) 
+        if(Input.GetMouseButtonDown(0)) 
         {
             mouseIsPressed = true;
         }
@@ -47,7 +47,7 @@ public class LineGenerator : MonoBehaviour
             mouseIsPressed = false;
         }
 
-        if(mouseIsPressed == true)
+        if(mouseIsPressed == true && paintingArea.paintingMode == true)
         {
             if(toggleRed.isOn == true)
             {
