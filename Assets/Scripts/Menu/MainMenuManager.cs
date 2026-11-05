@@ -55,4 +55,10 @@ public class MainMenuManager : MonoBehaviour
     {
         UpdateSliderText(slidermusic.value);
     }
+
+    void Update()
+    {
+        // pas de GameManager dans le menu : c'est donc ici qu'on donne le temps réel au shader d'écran pour que le CRT reste animé
+        Shader.SetGlobalFloat("_TempsEcran", Time.unscaledTime);
+    }
 }

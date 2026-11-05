@@ -31,6 +31,7 @@ public class Popup : MonoBehaviour
     Rigidbody2D rb;
     float finBlocage;
     float finTremblement;
+    Vector2 attraction; // ce que la tornade ajoute au déplacement de la popup
 
     // OnEnable / OnDisable -> appelés quand l'objet apparaît / disparaît pour les ajouter ou les virer de la list
     void OnEnable() { list.Add(this); }
@@ -52,7 +53,8 @@ public class Popup : MonoBehaviour
 
         // avance vers le joueur
         Vector2 versLeJoueur = GameManager.instance.joueur.transform.position - transform.position;
-        rb.linearVelocity = versLeJoueur.normalized * vitesse;
+        rb.linearVelocity = versLeJoueur.normalized * vitesse + attraction;
+        attraction = Vector2.zero; // la tornade la redonne à chaque pas de physique tant que la popup est dans son rayon
     }
 
     void Update()
@@ -110,13 +112,20 @@ public class Popup : MonoBehaviour
         fond.color = Color.gray; // fenêtre assombrie, comme une fenêtre inactive
     }
 
-    // appelé pour mettre fin au bloquage 
+    // appelé pour mettre fin au bloquage
     void Debloquer()
     {
         bloquee = false;
         cibleeParClippy = false;
         rb.bodyType = RigidbodyType2D.Dynamic;
         fond.color = couleurDuFond;
+    }
+
+    // appelé par la tornade -> la popup est attirée en plus de son déplacement normal
+    public void Attirer(Vector2 force)
+    {
+        if (bloquee) return; // une popup bloquée par Clippy ne bouge plus
+        attraction += force;
     }
 
     // fonction pour supprimer la popup

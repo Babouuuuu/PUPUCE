@@ -49,6 +49,18 @@ Shader "Pupuce/EffetPixels"
                 return c;
             }
 
+            // Position de la caméra en pixels : ajoutée à la position d'un pixel de l'écran, ça donne sa position sur la map.
+            // La grille de cellules reste ainsi collée à la map et défile quand le joueur se déplace.
+            float2 DecalageCamera(float2 dims)
+            {
+                float pixelsParUnite = dims.y / (2.0 * unity_OrthoParams.y); // unity_OrthoParams.y = orthographicSize de la caméra
+                float2 decalage = _WorldSpaceCameraPos.xy * pixelsParUnite;
+                #if UNITY_UV_STARTS_AT_TOP
+                decalage.y *= -_ProjectionParams.x; // l'image peut être retournée : uv.y ne monte pas toujours dans le même sens que la map
+                #endif
+                return decalage;
+            }
+
             // Centre de la cellule hexagonale qui contient le point p (en pixels)
             float2 CentreDeLaCellule(float2 p, float2 taille)
             {
@@ -74,8 +86,8 @@ Shader "Pupuce/EffetPixels"
             {
                 float2 taille = max(float2(_TaillePixel, _TaillePixel * _Etirement) * echelle, 1.0);
 
-                // On tourne la grille de cellules autour du centre de l'écran
-                float2 centre = dims * 0.5;
+                // On tourne la grille de cellules autour du centre de la map
+                float2 centre = dims * 0.5 - DecalageCamera(dims);
                 float angle = radians(_Angle);
                 float c = cos(angle);
                 float s = sin(angle);

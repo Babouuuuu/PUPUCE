@@ -1,74 +1,136 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 // l'écran de choix d'upgrade ouvert par le GameManager à chaque palier
+// il tire au hasard des upgrades et un malus dans les listes remplies dans l'Inspector
 public class EcranUpgrade : MonoBehaviour
 {
-    public int niveauMax = 4;
+    // une ligne de la liste -> une upgrade ou un malus les deux marche pareil
+    [System.Serializable]
+    public class TypeUpgrade
+    {
+        public string nom;
+        public Sprite icone;
+        [TextArea] public string description;
+        public GameObject prefab;
+        [Tooltip("qty max stackable")]
+        public int quantiteMax = 3;
+        [HideInInspector] public int quantite; // combien de fois on l'a déjà pris
+    }
 
-    [Header("Souris autonome")]
-    public GameObject prefabSouris;
-    public Button boutonSouris;
-    public Text niveauSouris;
+    // les éléments d'une carte de lécran update
+    [System.Serializable]
+    public class Carte
+    {
+        public GameObject objet;
+        public Image icone;
+        public Text nom;
+        public Text niveau;
+        public Text description;
+    }
 
-    [Header("Clippy")]
-    public GameObject prefabClippy;
-    public Button boutonClippy;
-    public Text niveauClippy;
+    // pour ajouter une upgrade ou un malus il suffit d'ajouter une ligne dans l'Inspector
+    [Header("Les listes")]
+    public TypeUpgrade[] upgrades;
+    [Tooltip("Accepter un malus donne une upgrade en plus")]
+    public TypeUpgrade[] malus;
 
-    [Header("Logo DVD")]
-    public GameObject prefabDVD;
-    public Button boutonDVD;
-    public Text niveauDVD;
+    // il y a autant de tirages que de cartes
+    [Header("Les cartes de l'écran")]
+    public Carte[] cartesUpgrade;
+    public Carte[] cartesMalus;
 
-    int nbSouris = 0;
-    int nbClippy = 0;
-    int nbDVD = 0;
+    List<TypeUpgrade> upgradesTirees;
+    List<TypeUpgrade> malusTires;
     float heureOuverture;
 
     public void Ouvrir()
     {
+        upgradesTirees = TirerAuHasard(upgrades, cartesUpgrade.Length);
+
         // Si tout est déjà au niveau maximum, il n'y a rien à choisir
-        if (nbSouris >= niveauMax && nbClippy >= niveauMax && nbDVD >= niveauMax)
+        if (upgradesTirees.Count == 0)
         {
             GameManager.instance.UpgradeChoisie();
             return;
         }
 
+        // Un malus rapporte une upgrade en plus -> on ne le propose pas s'il ne reste plus rien à gagner
+        if (UpgradesRestantes() > 1 + GameManager.instance.upgradesEnAttente) malusTires = TirerAuHasard(malus, cartesMalus.Length);
+        else malusTires = new List<TypeUpgrade>();
+
         gameObject.SetActive(true);
         // Le jeu est en pause (Time.timeScale = 0) : on utilise donc le temps "non mis à l'échelle"
         heureOuverture = Time.unscaledTime;
 
-        niveauSouris.text = "Niveau " + nbSouris + " / " + niveauMax;
-        niveauClippy.text = "Niveau " + nbClippy + " / " + niveauMax;
-        niveauDVD.text = "Niveau " + nbDVD + " / " + niveauMax;
-
-        // Un bouton "interactable = false" est grisé et ne peut plus être cliqué
-        boutonSouris.interactable = nbSouris < niveauMax;
-        boutonClippy.interactable = nbClippy < niveauMax;
-        boutonDVD.interactable = nbDVD < niveauMax;
+        AfficherCartes(cartesUpgrade, upgradesTirees);
+        AfficherCartes(cartesMalus, malusTires);
     }
 
-    // Les 3 fonctions suivantes sont branchées sur le OnClick des boutons "Installer"
-    public void ChoisirSouris()
+    // branchée sur le OnClick du bouton "Installer" de chaque carte (le numéro de la carte est réglé dans l'Inspector)
+    public void ChoisirUpgrade(int numeroCarte)
     {
         if (ClicTropRapide()) return;
-        nbSouris++;
-        FaireApparaitre(prefabSouris);
+        Installer(upgradesTirees[numeroCarte]);
+        gameObject.SetActive(false);
+        GameManager.instance.UpgradeChoisie();
     }
 
-    public void ChoisirClippy()
+    // branchée sur le OnClick du bouton "Accepter" de la carte de malus
+    // l'écran reste ouvert pour choisir l'upgrade, puis le GameManager le rouvrira pour l'upgrade en plus
+    public void ChoisirMalus(int numeroCarte)
     {
         if (ClicTropRapide()) return;
-        nbClippy++;
-        FaireApparaitre(prefabClippy);
+        Installer(malusTires[numeroCarte]);
+        GameManager.instance.upgradesEnAttente++;
+        AfficherCartes(cartesMalus, new List<TypeUpgrade>()); // une liste vide cache les cartes : un seul malus par écran
     }
 
-    public void ChoisirDVD()
+    List<TypeUpgrade> TirerAuHasard(TypeUpgrade[] liste, int nombre)
     {
-        if (ClicTropRapide()) return;
-        nbDVD++;
-        FaireApparaitre(prefabDVD);
+        // on garde seulement ceux qui n'ont pas atteint leur limite
+        List<TypeUpgrade> disponibles = new List<TypeUpgrade>();
+        foreach (TypeUpgrade type in liste)
+        {
+            if (type.quantite < type.quantiteMax) disponibles.Add(type);
+        }
+
+        // tirage sans remise : ce qui est tiré sort de la liste donc impossible de l'avoir 2 fois
+        List<TypeUpgrade> tirage = new List<TypeUpgrade>();
+        while (tirage.Count < nombre && disponibles.Count > 0)
+        {
+            int numero = Random.Range(0, disponibles.Count);
+            tirage.Add(disponibles[numero]);
+            disponibles.RemoveAt(numero);
+        }
+        return tirage;
+    }
+
+    // le nombre d'upgrades qu'on peut encore prendre avant que tout soit au maximum
+    int UpgradesRestantes()
+    {
+        int restantes = 0;
+        foreach (TypeUpgrade type in upgrades)
+        {
+            restantes += type.quantiteMax - type.quantite;
+        }
+        return restantes;
+    }
+
+    void AfficherCartes(Carte[] cartes, List<TypeUpgrade> tirage)
+    {
+        for (int i = 0; i < cartes.Length; i++)
+        {
+            // pas assez de choses à proposer -> on cache les cartes en trop
+            cartes[i].objet.SetActive(i < tirage.Count);
+            if (i >= tirage.Count) continue;
+
+            cartes[i].icone.sprite = tirage[i].icone;
+            cartes[i].nom.text = tirage[i].nom;
+            cartes[i].niveau.text = "Niveau " + tirage[i].quantite + " / " + tirage[i].quantiteMax;
+            cartes[i].description.text = tirage[i].description;
+        }
     }
 
     // Évite de choisir par erreur si on était en train de cliquer frénétiquement sur une popup
@@ -77,10 +139,9 @@ public class EcranUpgrade : MonoBehaviour
         return Time.unscaledTime < heureOuverture + 0.4f;
     }
 
-    void FaireApparaitre(GameObject prefab)
+    void Installer(TypeUpgrade type)
     {
-        Instantiate(prefab, GameManager.instance.joueur.transform.position, Quaternion.identity);
-        gameObject.SetActive(false);
-        GameManager.instance.UpgradeChoisie();
+        type.quantite++;
+        Instantiate(type.prefab, GameManager.instance.joueur.transform.position, Quaternion.identity);
     }
 }

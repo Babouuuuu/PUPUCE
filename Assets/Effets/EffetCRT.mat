@@ -27,13 +27,18 @@ Material:
     m_Floats:
     - _Aberration: 3
     - _Balayage: 0.15
+    - _BandeLumineuse: 0.35
     - _Grille: 0.5
     - _Neige: 0.15
+    - _Respiration: 0.35
+    - _Scintillement: 0.2
     - _TailleBalayage: 3
     - _TailleGrille: 6
     - _TailleNeige: 1.5
-    - _Tremblement: 0.03
-    - _Vitesse: 0
+    - _Tremblement: 0.2
+    - _Vignette: 0.35
+    - _Vitesse: 0.3
+    - _VitesseBande: 0.12
     m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1

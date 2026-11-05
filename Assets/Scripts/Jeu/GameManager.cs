@@ -37,9 +37,10 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public float tempsEcoule;
     [HideInInspector] public int popupsFermees;
     [HideInInspector] public bool partieFinie;
+    [HideInInspector] public int upgradesEnAttente; // paliers franchis dont on n'a pas encore choisi l'upgrade (un malus en ajoute un aussi)
+    [HideInInspector] public float lagHorizontal; // la force du malus de lag à l'écran (0 = pas de lag)
 
     int prochainPalier = 0;     // numéro du prochain palier à atteindre
-    int upgradesEnAttente = 0;  // paliers franchis dont on n'a pas encore choisi l'upgrade
 
     void Awake()
     {
@@ -52,6 +53,17 @@ public class GameManager : MonoBehaviour
     {
         // Time.deltaTime vaut 0 quand le jeu est en pause (Time.timeScale = 0) -> le chrono s'arrête tout seul
         tempsEcoule += Time.deltaTime;
+
+        // on donne au shader d'écran le temps réel : le CRT reste vivant même quand le jeu est en pause
+        Shader.SetGlobalFloat("_TempsEcran", Time.unscaledTime);
+        // pas de lag pendant les pauses sinon on ne pourrait plus lire l'écran d'upgrade
+        Shader.SetGlobalFloat("_LagHorizontal", Time.timeScale > 0f ? lagHorizontal : 0f);
+    }
+
+    // en quittant la scène ou le mode Play, le lag ne doit pas rester à l'écran
+    void OnDestroy()
+    {
+        Shader.SetGlobalFloat("_LagHorizontal", 0f);
     }
 
     // remplissage de la barre entre 0 et 1
