@@ -43,10 +43,13 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: SpecialPop
+    uniqueID: 3591074821
+    locked: 0
   - name: Bosses
     uniqueID: 2831036223
     locked: 0
-  - name: PopUpgrade
+  - name: Upgrades
     uniqueID: 3090280971
     locked: 0
   - name: Player

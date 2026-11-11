@@ -1,12 +1,14 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 
 public class PaintingArea : MonoBehaviour
 {
     public bool paintingMode = false;
     public BoxCollider2D boxCollider;
+    public Image paintingArea;
 
     void OnTriggerEnter2D(Collider2D collision)
     {

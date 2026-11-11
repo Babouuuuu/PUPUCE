@@ -37,7 +37,7 @@ public class LineGenerator : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0)) 
+        if(Input.GetMouseButtonDown(0))
         {
             mouseIsPressed = true;
         }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InterractionPaint : MonoBehaviour
 {
@@ -15,15 +16,23 @@ public class InterractionPaint : MonoBehaviour
     [HideInInspector]
     public bool isMagentaColorIn = false;
 
+    public LineGenerator lineGenerator;
 
     public Popup popup;
+
+    public SpawnerSpecials spawnerSpecials;
+
+    public GameObject artPaintPrefab;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void CliquerFinish()
     {
         if(isRedColorIn && isYellowColorIn && isGreenColorIn && isCyanColorIn && isBlueColorIn && isMagentaColorIn)
         {
+            lineGenerator.image.transform.SetParent(null);
+            lineGenerator.image.transform.position = new Vector2(100, 100);
             popup.Interaction();
+            spawnerSpecials.popups = new SpawnerSpecials.TypeDePopup[] { new SpawnerSpecials.TypeDePopup { prefab = artPaintPrefab, apparaitApres = 0f } };
             Debug.Log("Bravo, vous avez trouvé toutes les couleurs !");
         }
         else

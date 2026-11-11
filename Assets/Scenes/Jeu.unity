@@ -4557,6 +4557,7 @@ GameObject:
   - component: {fileID: 1821158678}
   - component: {fileID: 1821158676}
   - component: {fileID: 1821158677}
+  - component: {fileID: 1821158679}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4633,7 +4634,7 @@ MonoBehaviour:
   boss:
   - prefab: {fileID: 509509547016028188, guid: 681081d193243894fb3029fdb4f13911, type: 3}
     progression: 0.1
-  - prefab: {fileID: 8322870660480292481, guid: ec1960ffd3c54ca4689ec483eda006df, type: 3}
+  - prefab: {fileID: 238389332868832667, guid: 0a0a075381d338e449a710a2f68be87e, type: 3}
     progression: 0.6
 --- !u!4 &1821158678
 Transform:
@@ -4650,6 +4651,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1821158679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821158675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58875c1bdbcce4b4da428b513148fb58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnerSpecials
+  popups: []
+  delaiAuDebut: 3
+  delaiMinimum: 0.5
+  tempsPourDelaiMinimum: 200
+  maxPopupsEnMemeTemps: 2
 --- !u!1 &1877092870
 GameObject:
   m_ObjectHideFlags: 0

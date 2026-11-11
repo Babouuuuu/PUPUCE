@@ -196,6 +196,7 @@ MonoBehaviour:
   isCyanColorIn: 0
   isBlueColorIn: 0
   isMagentaColorIn: 0
+  lineGenerator: {fileID: 4964864883617412640}
   popup: {fileID: 8007661496702778863}
 --- !u!1 &246413661259048151
 GameObject:
@@ -865,6 +866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PaintingArea
   paintingMode: 0
   boxCollider: {fileID: 7683898556647243793}
+  paintingArea: {fileID: 5637901557051602764}
 --- !u!61 &7683898556647243793
 BoxCollider2D:
   m_ObjectHideFlags: 0
