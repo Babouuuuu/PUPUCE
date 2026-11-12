@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1267680319538818252}
   - component: {fileID: 6818144850403153549}
   - component: {fileID: 6275364403634930628}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: LogoDVD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,8 +81,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -1204686325
-  m_SortingLayer: 3
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 31000
   m_MaskInteraction: 0
   m_Sprite: {fileID: 5008517538688732822, guid: 827ffec02627d90419cc2c4c3125e7bd, type: 3}
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 5861745440802725076}
   - component: {fileID: 8959868964757267137}
   - component: {fileID: 573269027137911922}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Trainee
   m_TagString: Untagged
   m_Icon: {fileID: 0}

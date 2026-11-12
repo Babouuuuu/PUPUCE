@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class StopSpawning : MonoBehaviour
 {
-    private SpawnerPopups spawnerPopup;
     public Toggle stopSpawningToggle; // Assurez-vous d'avoir un Toggle dans votre scène et de le lier à cette variable
 
     // Update is called once per frame
@@ -13,20 +12,39 @@ public class StopSpawning : MonoBehaviour
         {
             if (stopSpawningToggle.isOn)
             {
-                if (spawnerPopup == null)
+                if (SpawnerPopups.instance == null)
                 {
-                    spawnerPopup = FindAnyObjectByType<SpawnerPopups>();
+                    SpawnerPopups.instance = FindAnyObjectByType<SpawnerPopups>();
                 }
-                if (spawnerPopup != null)
+                if (SpawnerPopups.instance != null)
                 {
-                    spawnerPopup.enabled = false; // Désactive le script SpawnerPopup pour arrêter l'apparition des popups
+                    SpawnerPopups.instance.enabled = false; // Désactive le script SpawnerPopup pour arrêter l'apparition des popups
                 }
             }
             else
             {
-                if (spawnerPopup != null)
+                if (SpawnerPopups.instance != null)
                 {
-                    spawnerPopup.enabled = true; // Réactive le script SpawnerPopup pour permettre l'apparition des popups
+                    SpawnerPopups.instance.enabled = true; // Réactive le script SpawnerPopup pour permettre l'apparition des popups
+                }
+            }
+
+            if (stopSpawningToggle.isOn)
+            {
+                if (SpawnerSpecials.instance == null)
+                {
+                    SpawnerSpecials.instance = FindAnyObjectByType<SpawnerSpecials>();
+                }
+                if (SpawnerSpecials.instance != null)
+                {
+                    SpawnerSpecials.instance.enabled = false; // Désactive le script SpawnerSpecials pour arrêter l'apparition des popups spéciaux
+                }
+            }
+            else
+            {
+                if (SpawnerSpecials.instance != null)
+                {
+                    SpawnerSpecials.instance.enabled = true; // Réactive le script SpawnerSpecials pour permettre l'apparition des popups spéciaux
                 }
             }
         }

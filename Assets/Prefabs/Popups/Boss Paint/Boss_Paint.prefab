@@ -130,8 +130,9 @@ MonoBehaviour:
   fond: {fileID: 349083427111059627}
   titre: {fileID: 6059312874190749912}
   cibleeParUneSouris: 1
-  cibleeParClippy: 0
+  cibleeParClippy: 1
   bloquee: 0
+  interactionsRestantes: 0
 --- !u!114 &4964864883617412640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,6 +199,7 @@ MonoBehaviour:
   isMagentaColorIn: 0
   lineGenerator: {fileID: 4964864883617412640}
   popup: {fileID: 8007661496702778863}
+  artPaintPrefab: {fileID: 3458526267196439661, guid: 60919ecbb7f452346bb6268d1c8d36be, type: 3}
 --- !u!1 &246413661259048151
 GameObject:
   m_ObjectHideFlags: 0

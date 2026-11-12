@@ -264,8 +264,8 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: e49ce66d4ca546a4b8936196016e475a, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: e49ce66d4ca546a4b8936196016e475a, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: f20c24e6f0ebf6e40973b78b82d983ca, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: f20c24e6f0ebf6e40973b78b82d983ca, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -502,6 +502,7 @@ MonoBehaviour:
   cibleeParUneSouris: 0
   cibleeParClippy: 0
   bloquee: 0
+  interactionsRestantes: 0
 --- !u!1 &6914761805805614206
 GameObject:
   m_ObjectHideFlags: 0

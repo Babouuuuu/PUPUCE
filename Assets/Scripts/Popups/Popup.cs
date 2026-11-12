@@ -22,10 +22,10 @@ public class Popup : MonoBehaviour
 
     // utilisés par les souris et Clippy pour ne pas viser tous la même popup (en gros on les definie a True quand deja cibler par le type)
     public bool cibleeParUneSouris;
-    [HideInInspector] public bool cibleeParClippy;
+    public bool cibleeParClippy;
     [HideInInspector] public bool bloquee;
 
-    int interactionsRestantes;
+    [HideInInspector] public int interactionsRestantes;
     string titreDeBase;
     Color couleurDuFond;
     Rigidbody2D rb;

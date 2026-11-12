@@ -19,7 +19,6 @@ public class MasterpieceArt : MonoBehaviour
     {
         if (paintingArea == null)
         {
-            Debug.Log("Le champ 'paintingArea' n'est pas assigné dans l'inspecteur.");
             paintingArea = FindAnyObjectByType<PaintingArea>().paintingArea;
             return;
         }

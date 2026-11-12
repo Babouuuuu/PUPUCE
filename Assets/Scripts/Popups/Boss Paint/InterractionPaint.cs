@@ -20,8 +20,6 @@ public class InterractionPaint : MonoBehaviour
 
     public Popup popup;
 
-    public SpawnerSpecials spawnerSpecials;
-
     public GameObject artPaintPrefab;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -32,7 +30,7 @@ public class InterractionPaint : MonoBehaviour
             lineGenerator.image.transform.SetParent(null);
             lineGenerator.image.transform.position = new Vector2(100, 100);
             popup.Interaction();
-            spawnerSpecials.popups = new SpawnerSpecials.TypeDePopup[] { new SpawnerSpecials.TypeDePopup { prefab = artPaintPrefab, apparaitApres = 0f } };
+            SpawnerSpecials.instance.popups = new SpawnerSpecials.TypeDePopup[] { new SpawnerSpecials.TypeDePopup { prefab = artPaintPrefab, apparaitApres = 0f } };
             Debug.Log("Bravo, vous avez trouvé toutes les couleurs !");
         }
         else

@@ -359,8 +359,9 @@ MonoBehaviour:
   fond: {fileID: 8154470601012814443}
   titre: {fileID: 8015442009944530574}
   cibleeParUneSouris: 0
-  cibleeParClippy: 0
+  cibleeParClippy: 1
   bloquee: 0
+  interactionsRestantes: 0
 --- !u!114 &5801688648082261034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,7 +446,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9ae6c27bd59cac94e85cec8dfd4dc650, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7f6b2bbaaa3ab1b459c33b3ea3da938b, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -484,8 +485,8 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: e49ce66d4ca546a4b8936196016e475a, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: e49ce66d4ca546a4b8936196016e475a, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: f20c24e6f0ebf6e40973b78b82d983ca, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: f20c24e6f0ebf6e40973b78b82d983ca, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -752,7 +753,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

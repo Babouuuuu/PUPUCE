@@ -17,7 +17,6 @@ public class DestroyAll : MonoBehaviour
             }
             if (popup != null)
             {
-                Debug.Log("NoXP activé : Réinitialisation de l'expérience du joueur à 0");
                 popup.Detruire(); // Réinitialise l'expérience du joueur à 0
             }
         

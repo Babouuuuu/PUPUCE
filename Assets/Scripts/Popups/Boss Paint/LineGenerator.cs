@@ -96,8 +96,6 @@ public class LineGenerator : MonoBehaviour
                 Vector2 objectPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 Destroy.linePrefabMagenta.objectPosition.Quaternion.identity;
             }*/
-            
-            Debug.Log("++ line");
         }
 
         
