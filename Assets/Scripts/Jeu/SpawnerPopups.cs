@@ -54,7 +54,7 @@ public class SpawnerPopups : MonoBehaviour
 
     float prochainePopup = 1f;
     int numeroBoss = 0;
-    int numeroUpgrade = 0;
+    //int numeroUpgrade = 0;
     int ordreAffichage = 10000; // chaque nouvelle popup s'affiche derrière les précédentes ducoup on laisse de la marge
 
     void Awake()
