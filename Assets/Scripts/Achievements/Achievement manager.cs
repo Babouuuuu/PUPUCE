@@ -60,7 +60,7 @@ public class Achievementmanager : MonoBehaviour
     }
 
    
-    private static void RefreshSlots()
+    public static void RefreshSlots()
     {
         foreach (var slot in registeredSlots)
         {
