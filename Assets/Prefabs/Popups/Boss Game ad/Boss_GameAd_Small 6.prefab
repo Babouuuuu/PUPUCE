@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8244040652407731542}
   - component: {fileID: 8726153307769238563}
   - component: {fileID: 8235466485989872888}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 854228802266465050}
   - component: {fileID: 577479355073453787}
   - component: {fileID: 3271128587249499259}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Texte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 4564694431276328433}
   - component: {fileID: 9158770058025305229}
   - component: {fileID: 5174668771112598194}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Boss_GameAd_Small 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: PupuceTemp::Popup
   vitesse: 1.2
   interactionsNecessaires: 1
-  xp: 2
+  xp: 1
   fenetre: {fileID: 1315405266395380986}
   fond: {fileID: 8571164707745648043}
   titre: {fileID: 3455365753303319046}
@@ -312,6 +312,8 @@ MonoBehaviour:
   cibleeParClippy: 0
   bloquee: 0
   interactionsRestantes: 0
+  interactionSpeciale: 0
+  titreDeBase: 
 --- !u!1 &531496048976806901
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,7 +325,7 @@ GameObject:
   - component: {fileID: 95535828391133191}
   - component: {fileID: 8065968347516380058}
   - component: {fileID: 1243541534564211704}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Fenetre_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -398,7 +400,7 @@ GameObject:
   - component: {fileID: 1315405266395380986}
   - component: {fileID: 5658789417733261976}
   - component: {fileID: 8571164707745648043}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Fenetre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -477,7 +479,7 @@ GameObject:
   - component: {fileID: 4521387725904967685}
   - component: {fileID: 4615563614175101444}
   - component: {fileID: 6541880659743639232}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Fenetre_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -552,7 +554,7 @@ GameObject:
   - component: {fileID: 5801570980905037968}
   - component: {fileID: 5913158939438627238}
   - component: {fileID: 3455365753303319046}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Titre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,7 +634,7 @@ GameObject:
   - component: {fileID: 2435614928441790941}
   - component: {fileID: 6190802056119083863}
   - component: {fileID: 4390451967616896308}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: BoutonKill
   m_TagString: Untagged
   m_Icon: {fileID: 0}

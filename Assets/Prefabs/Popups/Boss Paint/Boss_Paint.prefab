@@ -130,9 +130,11 @@ MonoBehaviour:
   fond: {fileID: 349083427111059627}
   titre: {fileID: 6059312874190749912}
   cibleeParUneSouris: 1
-  cibleeParClippy: 1
+  cibleeParClippy: 0
   bloquee: 0
   interactionsRestantes: 0
+  interactionSpeciale: 0
+  titreDeBase: 
 --- !u!114 &4964864883617412640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1105,7 +1107,7 @@ GameObject:
   - component: {fileID: 1831316944386591095}
   - component: {fileID: 4303859198219234625}
   m_Layer: 6
-  m_Name: Image
+  m_Name: ImageTitre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

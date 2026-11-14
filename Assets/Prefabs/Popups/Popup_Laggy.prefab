@@ -313,6 +313,8 @@ MonoBehaviour:
   cibleeParClippy: 0
   bloquee: 0
   interactionsRestantes: 0
+  interactionSpeciale: 0
+  titreDeBase: 
 --- !u!114 &-3639543547713666126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,6 +332,7 @@ MonoBehaviour:
   MaxX: 0
   MinY: 0
   MaxY: 0
+  popup: {fileID: 5174668771112598194}
 --- !u!1 &580603038081501063
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,20 +915,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5174668771112598194}
-        m_TargetAssemblyTypeName: Popup, PupuceTemp
+        m_TargetAssemblyTypeName: Popup, Assembly-CSharp
         m_MethodName: Interaction
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: -3639543547713666126}
-        m_TargetAssemblyTypeName: InteractionLaggy, Assembly-CSharp
-        m_MethodName: TeleporterPopup
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

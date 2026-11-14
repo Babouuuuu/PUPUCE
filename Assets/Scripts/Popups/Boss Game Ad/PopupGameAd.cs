@@ -10,19 +10,31 @@ public class PopupGameAd : MonoBehaviour
     public GameObject slimePrefab;
     public Popup popup;
 
+    public int interactionsDupliquer; // pour plus tard les popup avec plusieurs interactions
+
     // branchée sur les boutons (OnClick) dans l'Inspector et appelée par les scripts d'interaction, les souris et le logo DVD
-    public void InteractionSlime()
+    void Update()
     {
-        popup.Interaction();
-        if (popup.interactionsRestantes <= 0)
+        if (popup.interactionsRestantes <= 0) return;
+
+        if (popup.interactionSpeciale == true)
         {
-            Dupliquer(transform.position);
+            if (popup.interactionsRestantes == interactionsDupliquer)
+            {
+                Dupliquer(transform.position);
+                Debug.Log("Dupliquer");
+                GameManager.instance.PopupFermee(popup.xp);
+                Destroy(popup.gameObject);
+                // MettreAJourTitre();
+            }
+            else if (popup.interactionsRestantes > interactionsDupliquer)
+            {
+                popup.Trembler();
+                Reproduction(transform.position);
+            }
+            popup.interactionSpeciale = false;
         }
-        else
-        {
-            popup.Trembler();
-            Reproduction(transform.position);
-        }
+        
     }
 
     public void Reproduction(Vector2 position)
@@ -40,4 +52,9 @@ public class PopupGameAd : MonoBehaviour
             SpawnerPopups.instance.FaireApparaitre(popup, position + offset);
         }
     }
+
+    /*void MettreAJourTitre()
+    {
+        popup.titre.text = popup.titreDeBase + " (" + (popup.interactionsRestantes - 3) + ")";
+    }*/
 }

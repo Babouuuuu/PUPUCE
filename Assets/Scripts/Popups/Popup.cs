@@ -26,7 +26,8 @@ public class Popup : MonoBehaviour
     [HideInInspector] public bool bloquee;
 
     [HideInInspector] public int interactionsRestantes;
-    string titreDeBase;
+    [HideInInspector] public bool interactionSpeciale; // pour les popup qui ont un comportement spécial (genre le logo DVD ou les souris)
+    [HideInInspector] public string titreDeBase;
     Color couleurDuFond;
     Rigidbody2D rb;
     float finBlocage;
@@ -79,6 +80,7 @@ public class Popup : MonoBehaviour
         if (interactionsRestantes <= 0) return; // déjà fermée -> précaution parce que on sais jamais
     
         interactionsRestantes--;
+        interactionSpeciale = true; // pour les popup qui ont un comportement spécial
         if (interactionsRestantes <= 0)
         {
             GameManager.instance.PopupFermee(xp); //on envoi l'xp pour la progression

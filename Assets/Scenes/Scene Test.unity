@@ -10947,7 +10947,7 @@ GameObject:
   - component: {fileID: 1678192963}
   - component: {fileID: 1678192962}
   - component: {fileID: 1678192966}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Curseur
   m_TagString: Cursor
   m_Icon: {fileID: 0}
@@ -12032,6 +12032,8 @@ MonoBehaviour:
     apparaitApres: 50
   - prefab: {fileID: 6625432101428613797, guid: fbfff4f4428ecc24ab899aa079bbefa9, type: 3}
     apparaitApres: 60
+  - prefab: {fileID: 509509547016028188, guid: 5afb41308123cb54181b5bd42fb00ee2, type: 3}
+    apparaitApres: 70
   delaiAuDebut: 1.4
   delaiMinimum: 0.1
   tempsPourDelaiMinimum: 200

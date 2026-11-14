@@ -8,14 +8,22 @@ public class InteractionLaggy : MonoBehaviour
 
     public float MinY;
     public float MaxY;
+    public Popup popup;
 
     // Update is called once per frame
-    public void TeleporterPopup()
+    void Update()
     {
-        ChooseRange();
-        Vector2 joueur = GameManager.instance.joueur.transform.position;
-        popupLaggy.transform.position = joueur + new Vector2(Random.Range(MinX, MaxX), Random.Range(MinY, MaxY));
-        Debug.Log("Popup laggy teleported to: " + popupLaggy.transform.position);
+        if (popup.interactionsRestantes <= 0) return;
+
+        if (popup.interactionSpeciale == true)
+        {
+            ChooseRange();
+            Vector2 joueur = GameManager.instance.joueur.transform.position;
+            popupLaggy.transform.position = joueur + new Vector2(Random.Range(MinX, MaxX), Random.Range(MinY, MaxY));
+            Debug.Log("Popup laggy teleported to: " + popupLaggy.transform.position);
+            popup.interactionSpeciale = false;
+        }
+        
     }
 
     void ChooseRange()
