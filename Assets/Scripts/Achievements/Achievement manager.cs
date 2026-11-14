@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem.Controls;
 
-public class Achivementmanager : MonoBehaviour
+public class Achievementmanager : MonoBehaviour
 // L'humble list des achievements, avec un integer de test afin de voir si sa marche ou pas <3
 {
+    public static Achievementmanager Instance; // NEW
+    private static List<UIachievement> registeredSlots = new List<UIachievement>(); // NEW
     public static List<Achievement> achievements;
 
     public int integer;
@@ -14,8 +16,61 @@ public class Achivementmanager : MonoBehaviour
     private float idleTimer;
     public int idleSeconds;
     private Vector3 lastMousePos;
+
+ 
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+        InitializeAchievements();
+        RefreshSlots();
+    }
+
+ 
+    private void OnEnable()
+    {
+        Achievement.OnUnlocked += HandleUnlocked;
+    }
+
+    private void OnDisable()
+    {
+        Achievement.OnUnlocked -= HandleUnlocked;
+    }
+
+    private void HandleUnlocked(Achievement a)
+    {
+        RefreshSlots();
+    }
+
+   
+    public static void Register(UIachievement slot)
+    {
+        registeredSlots.Add(slot);
+        slot.Refresh(AchievementUnlocked(slot.achievementName));
+    }
+
+    public static void Unregister(UIachievement slot)
+    {
+        registeredSlots.Remove(slot);
+    }
+
+   
+    private static void RefreshSlots()
+    {
+        foreach (var slot in registeredSlots)
+        {
+            if (slot == null) continue;
+            slot.Refresh(AchievementUnlocked(slot.achievementName));
+        }
+    }
+
 //Une booléenne qui est dans l'inspectueur, et qui accept un string pour le nom de l'achievement
-    public bool AchievementUnlocked(string achievementName)
+    public static bool AchievementUnlocked(string achievementName) // FIX: now static
     {
         bool result = false;
 //Si t'a pas l'achievement...T'a pas l'achievement.
@@ -33,11 +88,7 @@ public class Achivementmanager : MonoBehaviour
 
         return result;
     }
-
-    private void Start()
-    {
-        InitializeAchievements();
-    }
+    
 
     private void InitializeAchievements()
     {
@@ -46,9 +97,9 @@ public class Achivementmanager : MonoBehaviour
 // Dieux dit alor, "mon fils, tu listera les achievement ici et pas en bordelle dans mon script"
         achievements = new List<Achievement>(); 
         // Des exemmples test du script que j'ai piqué
-        achievements.Add(new Achievement("Step By Step", "Set your integer to 110 or above.", (object o) => integer >= 100));
+        achievements.Add(new Achievement("Step By Step", "Set your integer to 110 or above.", (object o) => integer >= 110)); // FIX: 100 -> 110
         achievements.Add(new Achievement("Not So Precise", "Set your floating point to 230.5 or above.", (object o) => floating_point >= 230.5));
-        achievements.Add(new Achievement("Faire une Yannis","Vous branler les couilles 30 secondes",(object o)=>idleSeconds<=30));
+        achievements.Add(new Achievement("Faire une Yannis","Vous branler les couilles 30 secondes",(object o)=>idleSeconds>=30)); // FIX: <= -> >=
     }
 //Chaque update sa recheck si ta complete un achievement (pas opti mais bon)
     private void Update()
@@ -98,6 +149,8 @@ public class Achivementmanager : MonoBehaviour
 
 public class Achievement
 {
+    public static event Action<Achievement> OnUnlocked; // NEW
+
     public string titre;
     public string description;
     public Predicate<object> prérequis;
@@ -127,6 +180,7 @@ public class Achievement
             //Quand tu unlock un achievement sa le save
             PlayerPrefs.SetInt("Achievement_" + titre, 1);
             PlayerPrefs.Save();
+            OnUnlocked?.Invoke(this); 
         }
     }
 
@@ -134,12 +188,7 @@ public class Achievement
     {
         return prérequis.Invoke(null);
     }
-}
-
-
-  
- 
-        
     
-
-
+ 
+    
+}
