@@ -49,6 +49,9 @@ TagManager:
   - name: Bosses
     uniqueID: 2831036223
     locked: 0
+  - name: IdiotPop
+    uniqueID: 2205558301
+    locked: 0
   - name: Upgrades
     uniqueID: 3090280971
     locked: 0

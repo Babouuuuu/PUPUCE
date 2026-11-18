@@ -59,16 +59,11 @@ public class Joueur : MonoBehaviour
     void OnTriggerEnter2D(Collider2D autre)
     {
         Popup popup = autre.GetComponent<Popup>(); //equivalent dun Cast sur Unreal Engine
-        YouAreAnIdiot idiot = autre.GetComponent<YouAreAnIdiot>();
-        if (popup == null && idiot == null) return; // ce n'est pas une popup (par exemple le logo DVD)
+        if (popup == null) return; // ce n'est pas une popup (par exemple le logo DVD)
 
         if (popup != null)
         {
             popup.Detruire();
-        }
-        else if (idiot != null)
-        {
-            idiot.Detruire();
         }
 
         GameManager.instance.PerdreUneVie();

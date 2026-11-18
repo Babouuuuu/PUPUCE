@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7305650282833366661}
   - component: {fileID: 5447249437233371326}
   - component: {fileID: 8015442009944530574}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Titre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,10 +90,10 @@ GameObject:
   - component: {fileID: 9129474180516186760}
   - component: {fileID: 9031965787711081556}
   - component: {fileID: 4403578642421250704}
-  - component: {fileID: 7474387832916536023}
   - component: {fileID: 8254010195724705588}
-  - component: {fileID: 409619530175917372}
-  m_Layer: 8
+  - component: {fileID: 7781655290648949314}
+  - component: {fileID: 535987161484870759}
+  m_Layer: 10
   m_Name: Boss_Idiot_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,27 +189,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.5, y: 1.5}
   m_EdgeRadius: 0
---- !u!114 &7474387832916536023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3458526267196439661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03009c95bffd8d549ac089b4d1fa6811, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::YouAreAnIdiot
-  vitesse: 3
-  interactionsNecessaires: 1
-  xp: 1
-  fenetre: {fileID: 7241479123564176516}
-  fond: {fileID: 8154470601012814443}
-  titre: {fileID: 8015442009944530574}
-  cibleeParUneSouris: 1
-  cibleeParClippy: 0
-  bloquee: 0
 --- !u!212 &8254010195724705588
 SpriteRenderer:
   serializedVersion: 3
@@ -255,8 +234,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2089408995
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 0}
@@ -270,7 +249,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
---- !u!114 &409619530175917372
+--- !u!114 &7781655290648949314
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -279,18 +258,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 3458526267196439661}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31f025b65fe7d7e45bb51fe0647ef33b, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e6704160d879174b8cd8fe6cbdee89b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::IdiotParts
-  part: {fileID: 3458526267196439661}
-  snakeParts:
-  - {fileID: 3458526267196439661, guid: 50405b576887eb94bb87144098a06bce, type: 3}
-  - {fileID: 3458526267196439661, guid: 27c9c7a5bf52fc54eaa2addf61472eef, type: 3}
-  - {fileID: 3458526267196439661, guid: 50405b576887eb94bb87144098a06bce, type: 3}
-  - {fileID: 3458526267196439661, guid: 27c9c7a5bf52fc54eaa2addf61472eef, type: 3}
-  speed: 3
-  movementSpeed: 1
-  snakeLength: 5
+  m_EditorClassIdentifier: Assembly-CSharp::Popup
+  vitesse: 0
+  interactionsNecessaires: 1
+  xp: 1
+  fenetre: {fileID: 7241479123564176516}
+  fond: {fileID: 8154470601012814443}
+  titre: {fileID: 8015442009944530574}
+  cibleeParUneSouris: 0
+  cibleeParClippy: 0
+  bloquee: 0
+  interactionsRestantes: 0
+  interactionSpeciale: 0
+  titreDeBase: 
+--- !u!114 &535987161484870759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3458526267196439661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03009c95bffd8d549ac089b4d1fa6811, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::YouAreAnIdiot
+  idiotParts:
+  - {fileID: 164666795739450742, guid: 50405b576887eb94bb87144098a06bce, type: 3}
+  - {fileID: 164666795739450742, guid: 50405b576887eb94bb87144098a06bce, type: 3}
+  - {fileID: 164666795739450742, guid: 50405b576887eb94bb87144098a06bce, type: 3}
+  vitesse: 3
+  delai: 1
 --- !u!1 &6208617406908313531
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 4718329800056692247}
   - component: {fileID: 5601339277434753860}
   - component: {fileID: 6801527188645542220}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: BoutonDownload
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +319,7 @@ RectTransform:
   m_GameObject: {fileID: 6208617406908313531}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.05, y: 1.05, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1213589954857104145}
@@ -327,7 +327,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 35.5, y: -118.5}
+  m_AnchoredPosition: {x: 27.5, y: -120}
   m_SizeDelta: {x: 229, y: 74}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &4718329800056692247
@@ -412,8 +412,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7474387832916536023}
-        m_TargetAssemblyTypeName: YouAreAnIdiot, Assembly-CSharp
+      - m_Target: {fileID: 7781655290648949314}
+        m_TargetAssemblyTypeName: Popup, Assembly-CSharp
         m_MethodName: Interaction
         m_Mode: 1
         m_Arguments:
@@ -435,7 +435,7 @@ GameObject:
   - component: {fileID: 1213589954857104145}
   - component: {fileID: 4544432099677745303}
   - component: {fileID: 7177236188196432080}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Texte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -514,7 +514,7 @@ GameObject:
   - component: {fileID: 7241479123564176516}
   - component: {fileID: 7312925103697749179}
   - component: {fileID: 8154470601012814443}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Fenetre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,7 +592,7 @@ GameObject:
   - component: {fileID: 8160130374604658214}
   - component: {fileID: 2825988506367662153}
   - component: {fileID: 6917603319695898385}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -640,7 +640,7 @@ Canvas:
   m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: -1463931073
+  m_SortingLayerID: -2089408995
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &2825988506367662153

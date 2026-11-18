@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7305650282833366661}
   - component: {fileID: 5447249437233371326}
   - component: {fileID: 8015442009944530574}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Titre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 9031965787711081556}
   - component: {fileID: 4403578642421250704}
   - component: {fileID: 8254010195724705588}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Boss_Idiot_White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,8 +232,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2089408995
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 4718329800056692247}
   - component: {fileID: 5601339277434753860}
   - component: {fileID: 6801527188645542220}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: BoutonDownload
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 1213589954857104145}
   - component: {fileID: 4544432099677745303}
   - component: {fileID: 7177236188196432080}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Texte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -458,7 +458,8 @@ GameObject:
   - component: {fileID: 7241479123564176516}
   - component: {fileID: 7312925103697749179}
   - component: {fileID: 8154470601012814443}
-  m_Layer: 8
+  - component: {fileID: 7642896852915712019}
+  m_Layer: 10
   m_Name: Fenetre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -524,6 +525,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7642896852915712019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8019326604616413567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31f025b65fe7d7e45bb51fe0647ef33b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IdiotParts
+  idiotHead: {fileID: 3458526267196439661, guid: 4e6771a9fbb14db43ae8e2b571ef346a, type: 3}
+  followDistance: 1
 --- !u!1 &8697377366467016798
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,7 +551,7 @@ GameObject:
   - component: {fileID: 8160130374604658214}
   - component: {fileID: 2825988506367662153}
   - component: {fileID: 6917603319695898385}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,7 +599,7 @@ Canvas:
   m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: -1463931073
+  m_SortingLayerID: -2089408995
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &2825988506367662153

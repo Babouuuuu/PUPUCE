@@ -2686,7 +2686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aac76ae02b4a1845a81381ed4eafe7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnerOnClick
-  prefabPopupToSpawn: {fileID: 3458526267196439661, guid: 4e6771a9fbb14db43ae8e2b571ef346a, type: 3}
+  prefabPopupToSpawn: {fileID: 2826564800419657388, guid: f6c9f2a4369e9a14bb25fe01ba9a571b, type: 3}
   prefabUpgradeToSpawn: {fileID: 0}
   ordreAffichage: 10000
 --- !u!114 &378542840
@@ -3203,7 +3203,7 @@ GameObject:
   m_Component:
   - component: {fileID: 450078093}
   m_Layer: 6
-  m_Name: BarreDesTaches
+  m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8868,7 +8868,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 000000000bf231b849296b703f2fbea805740bd6i
+  m_ApplyToSortingLayers: 000000000bf231b849296b703f2fbea805740bd61d267683i
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
