@@ -22,11 +22,12 @@ public class Popup : MonoBehaviour
 
     // utilisés par les souris et Clippy pour ne pas viser tous la même popup (en gros on les definie a True quand deja cibler par le type)
     public bool cibleeParUneSouris;
-    [HideInInspector] public bool cibleeParClippy;
+    public bool cibleeParClippy;
     [HideInInspector] public bool bloquee;
 
-    int interactionsRestantes;
-    string titreDeBase;
+    [HideInInspector] public int interactionsRestantes;
+    [HideInInspector] public bool interactionSpeciale; // pour les popup qui ont un comportement spécial (genre le logo DVD ou les souris)
+    [HideInInspector] public string titreDeBase;
     Color couleurDuFond;
     Rigidbody2D rb;
     float finBlocage;
@@ -79,6 +80,7 @@ public class Popup : MonoBehaviour
         if (interactionsRestantes <= 0) return; // déjà fermée -> précaution parce que on sais jamais
     
         interactionsRestantes--;
+        interactionSpeciale = true; // pour les popup qui ont un comportement spécial
         if (interactionsRestantes <= 0)
         {
             GameManager.instance.PopupFermee(xp); //on envoi l'xp pour la progression

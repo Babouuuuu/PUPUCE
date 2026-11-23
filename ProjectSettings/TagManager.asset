@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Upgrades
+  - Cursor
   layers:
   - Default
   - TransparentFX
@@ -13,10 +14,10 @@ TagManager:
   - Water
   - UI
   - SpecialPop
+  - Cursor
+  - 
   - Upgrades
-  - 
-  - 
-  - 
+  - IdiotPop
   - 
   - 
   - 
@@ -42,10 +43,16 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: SpecialPop
+    uniqueID: 3591074821
+    locked: 0
   - name: Bosses
     uniqueID: 2831036223
     locked: 0
-  - name: PopUpgrade
+  - name: IdiotPop
+    uniqueID: 2205558301
+    locked: 0
+  - name: Upgrades
     uniqueID: 3090280971
     locked: 0
   - name: Player

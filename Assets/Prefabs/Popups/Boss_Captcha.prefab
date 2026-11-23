@@ -6958,7 +6958,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.7, y: 4}
+  m_Size: {x: 4, y: 4.3}
   m_EdgeRadius: 0
 --- !u!114 &1656271176230669569
 MonoBehaviour:
@@ -6981,6 +6981,9 @@ MonoBehaviour:
   cibleeParUneSouris: 1
   cibleeParClippy: 0
   bloquee: 0
+  interactionsRestantes: 0
+  interactionSpeciale: 0
+  titreDeBase: 
 --- !u!114 &-2253957093668875529
 MonoBehaviour:
   m_ObjectHideFlags: 0

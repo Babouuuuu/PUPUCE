@@ -225,7 +225,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9ae6c27bd59cac94e85cec8dfd4dc650, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7f6b2bbaaa3ab1b459c33b3ea3da938b, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -264,8 +264,8 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: e49ce66d4ca546a4b8936196016e475a, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: e49ce66d4ca546a4b8936196016e475a, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: f20c24e6f0ebf6e40973b78b82d983ca, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: f20c24e6f0ebf6e40973b78b82d983ca, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -502,6 +502,7 @@ MonoBehaviour:
   cibleeParUneSouris: 0
   cibleeParClippy: 0
   bloquee: 0
+  interactionsRestantes: 0
 --- !u!1 &6914761805805614206
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,7 +663,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 2
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &3638319366204507724
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -61,7 +61,11 @@ public class Joueur : MonoBehaviour
         Popup popup = autre.GetComponent<Popup>(); //equivalent dun Cast sur Unreal Engine
         if (popup == null) return; // ce n'est pas une popup (par exemple le logo DVD)
 
-        popup.Detruire();
+        if (popup != null)
+        {
+            popup.Detruire();
+        }
+
         GameManager.instance.PerdreUneVie();
         finClignotement = Time.time + 0.5f; //on set le temps de fin du clignotement a temps actuel + 0.5 (en gros sa va clignoter 0.5s)
     }
