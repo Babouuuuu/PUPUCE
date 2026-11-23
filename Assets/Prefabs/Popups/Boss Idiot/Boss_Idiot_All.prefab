@@ -473,7 +473,7 @@ MonoBehaviour:
   isHead: 0
   youAreAnIdiot: {fileID: 953340462109008466}
   idiotHead: {fileID: 2639376286098042119}
-  followDistance: 100
+  followDistance: 50
 --- !u!114 &8003541984583421787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -697,7 +697,7 @@ MonoBehaviour:
   isHead: 0
   youAreAnIdiot: {fileID: 3339630189718175321}
   idiotHead: {fileID: 3458526267196439661}
-  followDistance: 100
+  followDistance: 50
 --- !u!114 &1344366158780891332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1235,7 +1235,7 @@ MonoBehaviour:
   isHead: 0
   youAreAnIdiot: {fileID: 1913962084828818645}
   idiotHead: {fileID: 8389396827830618606}
-  followDistance: 100
+  followDistance: 50
 --- !u!114 &7622276619904899820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1958,7 +1958,7 @@ MonoBehaviour:
   isHead: 0
   youAreAnIdiot: {fileID: 2501627110314724036}
   idiotHead: {fileID: 5344592197976490408}
-  followDistance: 100
+  followDistance: 50
 --- !u!114 &3695850164017067054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2405,7 +2405,7 @@ MonoBehaviour:
   isHead: 0
   youAreAnIdiot: {fileID: 3164644861853366511}
   idiotHead: {fileID: 7788437812764363107}
-  followDistance: 100
+  followDistance: 50
 --- !u!114 &5264433307260544468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4169,7 +4169,7 @@ MonoBehaviour:
   isHead: 0
   youAreAnIdiot: {fileID: 7245144837540063045}
   idiotHead: {fileID: 575786626508630829}
-  followDistance: 100
+  followDistance: 50
 --- !u!114 &3101754404754755533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4684,7 +4684,7 @@ MonoBehaviour:
   isHead: 0
   youAreAnIdiot: {fileID: 7015395188765836529}
   idiotHead: {fileID: 4452319070250230884}
-  followDistance: 100
+  followDistance: 50
 --- !u!114 &6914830153125859664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5011,7 +5011,7 @@ MonoBehaviour:
   isHead: 0
   youAreAnIdiot: {fileID: 6253059787986612809}
   idiotHead: {fileID: 5059279740393924350}
-  followDistance: 100
+  followDistance: 50
 --- !u!114 &7044398236949492002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5314,7 +5314,7 @@ MonoBehaviour:
   isHead: 0
   youAreAnIdiot: {fileID: 8142324894615500755}
   idiotHead: {fileID: 2840499832139584484}
-  followDistance: 100
+  followDistance: 50
 --- !u!114 &9083844378318405099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7324,7 +7324,7 @@ MonoBehaviour:
   isHead: 0
   youAreAnIdiot: {fileID: 677802620368037438}
   idiotHead: {fileID: 538578266208133686}
-  followDistance: 100
+  followDistance: 50
 --- !u!114 &443218115108686279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8043,7 +8043,7 @@ MonoBehaviour:
   isHead: 0
   youAreAnIdiot: {fileID: 5785541437455429711}
   idiotHead: {fileID: 5545926487648783057}
-  followDistance: 100
+  followDistance: 50
 --- !u!114 &1391064675364250422
 MonoBehaviour:
   m_ObjectHideFlags: 0
