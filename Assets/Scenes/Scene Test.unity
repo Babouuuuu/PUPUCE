@@ -12018,22 +12018,31 @@ MonoBehaviour:
   popups:
   - prefab: {fileID: 3458526267196439661, guid: 1322f2414d472444e896499e18811a53, type: 3}
     apparaitApres: 0
+    chanceApparaitre: 100
   - prefab: {fileID: 1148365755047731359, guid: c985cd8a050d5094096b3181abd33754, type: 3}
     apparaitApres: 6
+    chanceApparaitre: 100
   - prefab: {fileID: 3455999235214966558, guid: 98909133b95181f4ab2925f271ecafec, type: 3}
     apparaitApres: 12
+    chanceApparaitre: 100
   - prefab: {fileID: 7361244443201241132, guid: 55827669665de4a40ab7bc8a3a7e6ff4, type: 3}
     apparaitApres: 28
+    chanceApparaitre: 100
   - prefab: {fileID: 8322870660480292481, guid: ac56020f3ad44224a81a750f7a62f820, type: 3}
     apparaitApres: 34
+    chanceApparaitre: 100
   - prefab: {fileID: 684180666592445648, guid: 328a88e97e255824182fc0edcc3257d5, type: 3}
     apparaitApres: 40
+    chanceApparaitre: 100
   - prefab: {fileID: 509509547016028188, guid: 6ed439784d5d3724889b10dbd4b50422, type: 3}
     apparaitApres: 50
+    chanceApparaitre: 100
   - prefab: {fileID: 6625432101428613797, guid: fbfff4f4428ecc24ab899aa079bbefa9, type: 3}
     apparaitApres: 60
+    chanceApparaitre: 100
   - prefab: {fileID: 509509547016028188, guid: 5afb41308123cb54181b5bd42fb00ee2, type: 3}
     apparaitApres: 70
+    chanceApparaitre: 100
   delaiAuDebut: 1.4
   delaiMinimum: 0.1
   tempsPourDelaiMinimum: 200
@@ -12074,6 +12083,7 @@ MonoBehaviour:
   delaiAuDebut: 40
   delaiMinimum: 25
   tempsPourDelaiMinimum: 200
+  maxPopupsEnMemeTemps: 2
 --- !u!1 &1826915701
 GameObject:
   m_ObjectHideFlags: 0

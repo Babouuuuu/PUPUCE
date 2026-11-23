@@ -15,6 +15,7 @@ public class SpawnerPopups : MonoBehaviour
         public GameObject prefab;
         [Tooltip("La popup peut apparaître à partir de ce moment (en secondes)")]
         public float apparaitApres = 0f;
+        [Range(0, 100)] public int chanceApparaitre = 100;
     }
 
     [System.Serializable]
@@ -114,9 +115,10 @@ public class SpawnerPopups : MonoBehaviour
     {
         // on garde seulement les popups déjà débloquées
         List<GameObject> disponibles = new List<GameObject>();
+        int randomRange = Random.Range(1, 100);
         foreach (TypeDePopup type in popups)
         {
-            if (temps >= type.apparaitApres) disponibles.Add(type.prefab);
+            if (temps >= type.apparaitApres && randomRange <= type.chanceApparaitre) disponibles.Add(type.prefab);
         }
         if (disponibles.Count == 0) return null;
 

@@ -28,6 +28,7 @@ public class IdiotParts : MonoBehaviour
         {
             youAreAnIdiot.enabled = true;
             this.enabled = false;
+            return;
         }
 
         Vector2 idiotPos = idiotHead.transform.position;

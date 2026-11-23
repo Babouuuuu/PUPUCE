@@ -27,7 +27,7 @@ public class SpawnerSpecials : MonoBehaviour
     [Tooltip("Le temps avant lequel on attend la fréquence max de spawn")]
     public float tempsPourDelaiMinimum = 500f;
     [Tooltip("On va éviter de bruler les pauvres petit pc de RUBIKA")]
-    //public int maxPopupsEnMemeTemps = 2;
+    public int maxPopupsEnMemeTemps = 2;
 
     float prochainePopup = 1f;
     int ordreAffichage = 10000; // chaque nouvelle popup s'affiche derrière les précédentes ducoup on laisse de la marge
@@ -43,8 +43,8 @@ public class SpawnerSpecials : MonoBehaviour
 
         float temps = GameManager.instance.tempsEcoule;
 
-        //if (temps >= prochainePopup && Popup.list.Count < maxPopupsEnMemeTemps)
-        if (temps >= prochainePopup)
+        
+        if (temps >= prochainePopup && Popup.list.Count < maxPopupsEnMemeTemps)
         {
             FaireApparaitre(ChoisirPopupAuHasard(temps), PositionHorsEcran());
 
