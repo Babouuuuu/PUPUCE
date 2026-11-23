@@ -10947,7 +10947,7 @@ GameObject:
   - component: {fileID: 1678192963}
   - component: {fileID: 1678192962}
   - component: {fileID: 1678192966}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Curseur
   m_TagString: Cursor
   m_Icon: {fileID: 0}
