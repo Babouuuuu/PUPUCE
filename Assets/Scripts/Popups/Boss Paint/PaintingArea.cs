@@ -9,6 +9,7 @@ public class PaintingArea : MonoBehaviour
     public bool paintingMode = false;
     public BoxCollider2D boxCollider;
     public Image paintingArea;
+    MasterpieceArt masterpieceArt;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -25,6 +26,20 @@ public class PaintingArea : MonoBehaviour
         {
             paintingMode = false;
             Debug.Log("Le joueur est sorti de la zone de peinture.");
+        }
+    }
+
+    void Update()
+    {
+        masterpieceArt = GetComponentInParent<MasterpieceArt>();
+
+        if (masterpieceArt == null)
+        {
+            return;
+        }
+        else if (masterpieceArt != null)
+        {
+            Destroy(this);
         }
     }
 }

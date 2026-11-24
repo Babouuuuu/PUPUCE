@@ -24,6 +24,8 @@ public class YouAreAnIdiot : MonoBehaviour
         float x = Random.value < 0.5f ? -1f : 1f;
         float y = Random.value < 0.5f ? -1f : 1f;
         direction = new Vector2(x, y).normalized;
+
+        popup.vitesse = 0f;
     }
 
     void Update()

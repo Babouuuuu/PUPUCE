@@ -362,6 +362,8 @@ MonoBehaviour:
   cibleeParClippy: 1
   bloquee: 0
   interactionsRestantes: 0
+  interactionSpeciale: 0
+  titreDeBase: 
 --- !u!114 &5801688648082261034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,7 +577,7 @@ Canvas:
   m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: -1463931073
+  m_SortingLayerID: -703892475
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &7720311316263305409
@@ -909,8 +911,8 @@ Canvas:
   m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: -1463931073
-  m_SortingOrder: 20000
+  m_SortingLayerID: -703892475
+  m_SortingOrder: 32767
   m_TargetDisplay: 0
 --- !u!114 &2825988506367662153
 MonoBehaviour:

@@ -13,11 +13,16 @@ public class Teleporteur : MonoBehaviour
     [Tooltip("Pour ne pas être coupée par le bord de l'écran")]
     public float margeEcran = 1.5f;
 
+    public float delaiApparition = 5f;
+
     float prochaineTeleportation;
+
+    float reapparition;
 
     float heurePremier;
 
-    public RawImage blueClic;
+    public GameObject blueClic;
+    public GameObject buttonTeleport;
 
     void Start()
     {
@@ -28,17 +33,26 @@ public class Teleporteur : MonoBehaviour
     void Update()
     {
         if (Time.time >= prochaineTeleportation) TeleporterU();
+        if (Time.time >= reapparition) Apparaitre();
+
+        if (!DoubleClic())
+        {
+            blueClic.SetActive(false);
+        }
     }
 
     public void Clic()
     {
         Debug.Log("Clic");
+        blueClic.SetActive(true);
 
-        if (ClicRapide())
+        if (DoubleClic())
         {
             TeleporterP();
             Debug.Log("teleporterP");
             TeleporterU();
+            blueClic.SetActive(false);
+            buttonTeleport.SetActive(false);
         }
         else
         {
@@ -47,7 +61,7 @@ public class Teleporteur : MonoBehaviour
         }
     }
 
-    bool ClicRapide()
+    bool DoubleClic()
     {
         Debug.Log("ClicRapide");
         return Time.unscaledTime < heurePremier + 0.4f;
@@ -77,5 +91,11 @@ public class Teleporteur : MonoBehaviour
     void TeleporterP()
     {
         GameManager.instance.joueur.transform.position = gameObject.transform.position;
+    }
+
+    void Apparaitre()
+    {
+        buttonTeleport.SetActive(true);
+        reapparition = Time.time + delaiApparition;
     }
 }
