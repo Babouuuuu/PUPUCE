@@ -4527,11 +4527,16 @@ MonoBehaviour:
   ecranGameOver: {fileID: 1753477829}
   texteGameOver: {fileID: 360991896}
   ecranVictoire: {fileID: 1979751482}
+  "tempInvincibilit\xE9": 3
+  isInvincible: 0
   vies: 0
   xp: 0
   tempsEcoule: 0
   popupsFermees: 0
   partieFinie: 0
+  dossier: {fileID: 1975746789}
+  upgradesEnAttente: 0
+  lagHorizontal: 0
 --- !u!114 &1821158677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5235,7 +5240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: PupuceTemp::Joueur
   peutBouger: 1
   vitesse: 3.5
-  dossier: {fileID: 1975746789}
+  dossier: {fileID: 0}
 --- !u!50 &1991580282
 Rigidbody2D:
   serializedVersion: 5

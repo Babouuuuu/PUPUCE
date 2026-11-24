@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,38 +9,45 @@ using UnityEngine.UI;
 // Amen
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance; // on la declare en static pour que tout les scipt puisse le récuperer facilement, il est UNIQUE
+    public static GameManager
+        instance; // on la declare en static pour que tout les scipt puisse le récuperer facilement, il est UNIQUE
     // en gros public -> access ouvert, static -> ne dépend pas de la classe (singleton donc unique), GameManager -> on donne la ref de la classe, instance -> le nom de la variable
 
-    [Header("Monde")]
-    [Tooltip("Largeur et hauteur du monde (en unités). La caméra en voit environ 19 x 11.")]
+    [Header("Monde")] [Tooltip("Largeur et hauteur du monde (en unités). La caméra en voit environ 19 x 11.")]
     public Vector2 tailleDuMonde = new Vector2(50f, 30f);
 
-    [Header("Vies")]
-    public int viesMax = 4;
+    [Header("Vies")] public int viesMax = 4;
 
     [Header("Progression (la barre dans la barre des tâches)")]
     [Tooltip("XP à gagner pour remplir la barre et finir le niveau")]
     public int xpPourFinir = 150;
+
     [Tooltip("Paliers d'upgrade : 0 = barre vide, 1 = barre pleine. Dans l'ordre croissant !")]
     public float[] paliers = { 0.05f, 0.15f, 0.30f, 0.45f, 0.60f, 0.75f, 0.9f }; // Par defaut
 
-    [Header("Objets de la scène")]
-    public Joueur joueur;
+    [Header("Objets de la scène")] public Joueur joueur;
     public EcranUpgrade ecranUpgrade;
     public GameObject ecranGameOver;
     public Text texteGameOver;
     public GameObject ecranVictoire;
-
+    public float tempInvincibilité = 3f;
+    
+    public bool isInvincible = false;
+    float finClignotement;
     // ces variables sont lues par les autres scripts (HUD...) mais n'ont pas besoin d'apparaître dans l'Inspector
     [HideInInspector] public int vies;
     [HideInInspector] public int xp;
     [HideInInspector] public float tempsEcoule;
     [HideInInspector] public int popupsFermees;
     [HideInInspector] public bool partieFinie;
+    [HideInInspector] public Image dossier;
+    [HideInInspector]
+    public int
+        upgradesEnAttente; // paliers franchis dont on n'a pas encore choisi l'upgrade (un malus en ajoute un aussi)
 
-    int prochainPalier = 0;     // numéro du prochain palier à atteindre
-    int upgradesEnAttente = 0;  // paliers franchis dont on n'a pas encore choisi l'upgrade
+    [HideInInspector] public float lagHorizontal; // la force du malus de lag à l'écran (0 = pas de lag)
+
+    int prochainPalier = 0; // numéro du prochain palier à atteindre
 
     void Awake()
     {
@@ -52,6 +60,15 @@ public class GameManager : MonoBehaviour
     {
         // Time.deltaTime vaut 0 quand le jeu est en pause (Time.timeScale = 0) -> le chrono s'arrête tout seul
         tempsEcoule += Time.deltaTime;
+
+        // on donne au shader d'écran le temps réel : le CRT reste vivant même quand le jeu est en pause
+        Shader.SetGlobalFloat("_TempsEcran", Time.unscaledTime);
+        // pas de lag pendant les pauses sinon on ne pourrait plus lire l'écran d'upgrade
+        Shader.SetGlobalFloat("_LagHorizontal", Time.timeScale > 0f ? lagHorizontal : 0f);
+        
+        // refresh la couleur du dossier
+        bool clignote = Time.time < finClignotement && (int)(Time.time * 10) % 2 == 0; // (int) sert a sassurer que la valeur du calcul va sortir en entier
+        dossier.color = clignote ? Color.red : Color.white; // pour select la couleur entre rouge et blanc celon ci il clignote
     }
 
     // remplissage de la barre entre 0 et 1
@@ -100,12 +117,17 @@ public class GameManager : MonoBehaviour
     public void PerdreUneVie()
     {
         if (partieFinie) return;
-
+        if (isInvincible) return;
         vies--;
+        finClignotement = Time.time + tempInvincibilité; //on set le temps de fin du clignotement a temps actuel + 0.5 (en gros sa va clignoter 0.5s)
         if (vies <= 0) GameOver();
+        StartCoroutine(BecomeTemporarilyInvincible());
     }
 
-    // ta perdu gros noob
+    
+
+
+// ta perdu gros noob
     void GameOver()
     {
         partieFinie = true;
@@ -133,5 +155,26 @@ public class GameManager : MonoBehaviour
     {
         int secondes = (int)tempsEcoule;
         return (secondes / 60).ToString("00") + ":" + (secondes % 60).ToString("00");
+    }
+    private IEnumerator BecomeTemporarilyInvincible()
+    {
+        Debug.Log("Invincible");
+        isInvincible = true;
+
+        yield return new WaitForSeconds(tempInvincibilité);
+
+        isInvincible = false;
+        Debug.Log("Pas invincible");
+    }
+    void MethodThatTriggersInvulnerability()
+    {
+        if (!isInvincible)
+        {
+            StartCoroutine(BecomeTemporarilyInvincible());
+        }
+    }
+    void Knockback()
+    {
+        
     }
 }

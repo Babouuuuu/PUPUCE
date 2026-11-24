@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -10,20 +11,16 @@ public class Joueur : MonoBehaviour
     public float vitesse = 3.5f;
     [Tooltip("L'image du dossier")]
     public Image dossier;
+private GameManager gameManager;
+    
 
     Rigidbody2D rb;
     float finClignotement;
 
     void Start()
     {
+        gameManager = GameManager.instance;
         rb = GetComponent<Rigidbody2D>();
-    }
-
-    void Update()
-    {
-        // clignote en rouge après avoir été touché
-        bool clignote = Time.time < finClignotement && (int)(Time.time * 10) % 2 == 0; // (int) sert a sassurer que la valeur du calcul va sortir en entier
-        dossier.color = clignote ? Color.red : Color.white; // pour select la couleur entre rouge et blanc celon ci il clignote
     }
 
     // FixedUpdate est appelé a chaque pas de la physique -> c'est là qu'on déplace un Rigidbody2D
@@ -63,6 +60,6 @@ public class Joueur : MonoBehaviour
 
         popup.Detruire();
         GameManager.instance.PerdreUneVie();
-        finClignotement = Time.time + 0.5f; //on set le temps de fin du clignotement a temps actuel + 0.5 (en gros sa va clignoter 0.5s)
     }
+   
 }
