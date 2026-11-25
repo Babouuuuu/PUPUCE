@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 912b99504db577547be037ee064371c9
+guid: a5412ab6df8d64b449eed6bb793e1da9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7663162945123608793
-    second: VPN_0
+      213: -9166347017743233542
+    second: zip-folder-icon-my-computer-260nw-2001379178-removebg-preview_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -98,30 +98,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: VPN_0
+      name: zip-folder-icon-my-computer-260nw-2001379178-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 220
-        height: 238
+        x: 38
+        y: 79
+        width: 184
+        height: 142
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,8 +117,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9d86700f816095a60800000000000000
-      internalID: 7663162945123608793
+      spriteID: afd0477e3f79ac080800000000000000
+      internalID: -9166347017743233542
       vertices: []
       indices: 
       edges: []
@@ -150,7 +137,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      VPN_0: 7663162945123608793
+      zip-folder-icon-my-computer-260nw-2001379178-removebg-preview_0: -9166347017743233542
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
