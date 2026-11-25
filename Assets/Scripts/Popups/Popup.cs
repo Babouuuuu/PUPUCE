@@ -24,7 +24,6 @@ public class Popup : MonoBehaviour
     public bool cibleeParUneSouris;
     public bool cibleeParClippy;
     [HideInInspector] public bool bloquee;
-    [HideInInspector]  bool cibleeParZipBombe;
 
     [HideInInspector] public int interactionsRestantes;
     [HideInInspector] public bool interactionSpeciale; // pour les popup qui ont un comportement spécial (genre le logo DVD ou les souris)
