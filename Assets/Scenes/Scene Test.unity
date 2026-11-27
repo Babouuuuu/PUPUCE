@@ -12460,6 +12460,12 @@ MonoBehaviour:
   partieFinie: 0
   upgradesEnAttente: 0
   lagHorizontal: 0
+  "tempsImmobilit\xE9Joueur": 0
+  "tempsImmobilit\xE9Upgrade": 0
+  vitesseMultiplier: 0
+  immobileActif: 0
+  malwareActif: 0
+  vitesseActif: 0
 --- !u!114 &1821158677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13505,7 +13511,7 @@ GameObject:
   - component: {fileID: 1991580280}
   m_Layer: 0
   m_Name: Joueur
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13542,6 +13548,7 @@ MonoBehaviour:
   peutBouger: 1
   vitesse: 3.5
   dossier: {fileID: 1975746789}
+  imageJoueur: {fileID: 657471744}
 --- !u!50 &1991580282
 Rigidbody2D:
   serializedVersion: 5
@@ -14303,6 +14310,24 @@ MonoBehaviour:
     prefab: {fileID: 4710000000000004001, guid: c84d07e2a95b4f31b6d2e7a0f3c15d98, type: 3}
     quantiteMax: 3
     quantite: 0
+  - nom: "Immobilit\xE9"
+    icone: {fileID: 765199431953330784, guid: 9820b97539dc5564d96b6f1401806c15, type: 3}
+    description: 'Toutes les 8sec, votre personnage ne pourra plus bouger. '
+    prefab: {fileID: 6370377912149275659, guid: bcc193614d1740f419333cbd94a0cfe6, type: 3}
+    quantiteMax: 3
+    quantite: 0
+  - nom: Malware
+    icone: {fileID: -5095033382980464679, guid: d9e1305f5b0a39d469a71fba367f1431, type: 3}
+    description: "Les upgrades se bloquent \xE0 chaque fois qu'elles damage une popups. "
+    prefab: {fileID: 1808825164706137594, guid: 4263afeeeabe9534fbf5c5e112ac8414, type: 3}
+    quantiteMax: 3
+    quantite: 0
+  - nom: BAD-Booster.EXE
+    icone: {fileID: -5095033382980464679, guid: d9e1305f5b0a39d469a71fba367f1431, type: 3}
+    description: 'Toutes les popups vont plus vites. '
+    prefab: {fileID: 5534226888699215807, guid: 8d789bed59257264e81ccb1962570b56, type: 3}
+    quantiteMax: 1
+    quantite: 0
   cartesUpgrade:
   - objet: {fileID: 2032139287}
     icone: {fileID: 601559051}
@@ -14987,6 +15012,63 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Accepter le malus : +1 upgrade'
+--- !u!1001 &3144196725294433921
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2827216444620303112, guid: 8d789bed59257264e81ccb1962570b56, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.67593
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827216444620303112, guid: 8d789bed59257264e81ccb1962570b56, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.27898
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827216444620303112, guid: 8d789bed59257264e81ccb1962570b56, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827216444620303112, guid: 8d789bed59257264e81ccb1962570b56, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827216444620303112, guid: 8d789bed59257264e81ccb1962570b56, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827216444620303112, guid: 8d789bed59257264e81ccb1962570b56, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827216444620303112, guid: 8d789bed59257264e81ccb1962570b56, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827216444620303112, guid: 8d789bed59257264e81ccb1962570b56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827216444620303112, guid: 8d789bed59257264e81ccb1962570b56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827216444620303112, guid: 8d789bed59257264e81ccb1962570b56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5534226888699215807, guid: 8d789bed59257264e81ccb1962570b56, type: 3}
+      propertyPath: m_Name
+      value: MalusVitesse
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8d789bed59257264e81ccb1962570b56, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -14998,3 +15080,4 @@ SceneRoots:
   - {fileID: 1821158678}
   - {fileID: 96491708}
   - {fileID: 574529573}
+  - {fileID: 3144196725294433921}

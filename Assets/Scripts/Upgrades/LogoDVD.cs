@@ -6,6 +6,10 @@ public class LogoDVD : MonoBehaviour
     Rigidbody2D rb;
     SpriteRenderer sprite;
     Vector2 direction;
+    public bool bloquee;
+    public float finBlocage;
+    
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -18,8 +22,14 @@ public class LogoDVD : MonoBehaviour
         direction = new Vector2(x, y).normalized;
     }
 
+    void FixedUpdate()
+    {
+        if (bloquee && Time.time >= finBlocage) Debloquer();
+    }
+
     void Update()
     {
+        if (bloquee) return;
         // on calcul les bord max
         // comme la camera est fixé au joueur il faut en tenir compte
         Camera cam = Camera.main;
@@ -45,5 +55,26 @@ public class LogoDVD : MonoBehaviour
     {
         Popup popup = autre.GetComponent<Popup>();
         if (popup != null) popup.Interaction();
+
+        if (GameManager.instance.malwareActif == true && autre.CompareTag("Player") == false && autre.CompareTag("Upgrades") == false && autre.CompareTag("Cursor") == false && bloquee == false)
+        {
+            Bloquer();
+            Debug.Log("Bloquer");
+        }
+    }
+
+    void Bloquer()
+    {
+        bloquee = true;
+        finBlocage = Time.time + GameManager.instance.tempsImmobilitéUpgrade;
+        rb.bodyType = RigidbodyType2D.Static;
+        sprite.color = Color.gray;
+    }
+
+    void Debloquer()
+    {
+        bloquee = false;
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        sprite.color = Color.white;
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 547043861894974569}
   - component: {fileID: 1856692955580278386}
   - component: {fileID: 6203087038635768292}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: BlueClic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,9 +82,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4710000000000001002}
   - component: {fileID: 8185952476664012083}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Teleporteur
-  m_TagString: Untagged
+  m_TagString: Upgrades
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 8191044951253982939}
   - component: {fileID: 2413509268228780029}
   - component: {fileID: 8080301959974093259}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 6041469840490751979}
   - component: {fileID: 3925558439664287700}
   - component: {fileID: 6550252940418553936}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

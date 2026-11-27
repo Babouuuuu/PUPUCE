@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4710000000000001002}
   - component: {fileID: 4710000000000001003}
   - component: {fileID: 4710000000000001004}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Tornade
-  m_TagString: Untagged
+  m_TagString: Upgrades
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

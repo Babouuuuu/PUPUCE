@@ -46,6 +46,11 @@ public class Popup : MonoBehaviour
         titreDeBase = titre.text;
         couleurDuFond = fond.color;
         MettreAJourTitre();
+
+        if (GameManager.instance.vitesseActif == true)
+        {
+            vitesse = vitesse * GameManager.instance.vitesseMultiplier;
+        }
     }
 
     void FixedUpdate()

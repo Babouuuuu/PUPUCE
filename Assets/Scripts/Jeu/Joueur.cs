@@ -10,6 +10,7 @@ public class Joueur : MonoBehaviour
     public float vitesse = 3.5f;
     [Tooltip("L'image du dossier")]
     public Image dossier;
+    public Image imageJoueur;
 
     Rigidbody2D rb;
     float finClignotement;

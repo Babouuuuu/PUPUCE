@@ -8,9 +8,23 @@ public class SourisAutonome : MonoBehaviour
 
     Popup cible;
     float heureDuClic; // le moment où la souris arrive sur sa cible et clique
+    SpriteRenderer sprite;
+    bool bloquee;
+    float finBlocage;
+
+    void Start()
+    {
+        sprite = GetComponent<SpriteRenderer>();
+    }
+
+    void FixedUpdate()
+    {
+        if (bloquee && Time.time >= finBlocage) Debloquer();
+    }
 
     void Update()
     {
+        if (bloquee) return;
         if (Time.deltaTime <= 0f) return; // jeu en pause donc logique elle bouge pas
 
         // pas de cible -> on en cherche une nouvelle
@@ -41,6 +55,11 @@ public class SourisAutonome : MonoBehaviour
             cible.cibleeParUneSouris = false;
             cible.Action();
             cible = null;
+            if (GameManager.instance.malwareActif == true)
+            {
+                Bloquer();
+                Debug.Log("Bloquer");
+            }
         }
     }
 
@@ -64,4 +83,19 @@ public class SourisAutonome : MonoBehaviour
         }
         return laPlusProche;
     }
+
+    void Bloquer()
+    {
+        bloquee = true;
+        finBlocage = Time.time + GameManager.instance.tempsImmobilitéUpgrade;
+        sprite.color = Color.gray;
+    }
+
+    void Debloquer()
+    {
+        bloquee = false;
+        sprite.color = Color.white;
+    }
+
+    
 }

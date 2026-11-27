@@ -39,6 +39,15 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public bool partieFinie;
     [HideInInspector] public int upgradesEnAttente; // paliers franchis dont on n'a pas encore choisi l'upgrade (un malus en ajoute un aussi)
     [HideInInspector] public float lagHorizontal; // la force du malus de lag à l'écran (0 = pas de lag)
+    [HideInInspector] public float tempsImmobilitéJoueur; // le temps d'immobilité pour le malus Immobile
+    [HideInInspector] public float tempsImmobilitéUpgrade; // le temps d'immobilité pour le malus Malware
+    [HideInInspector] public float vitesseMultiplier; // la vitesse multiplié à la vitesse du popup pour le malus Vitesse
+    [HideInInspector] public bool immobileActif; // pour voir si le malus Immobile est activé
+    [HideInInspector] public bool malwareActif; // pour voir si le malus Malware est activé
+    [HideInInspector] public bool vitesseActif; // pour voir si le malus Vitesse est activé
+    
+
+
 
     int prochainPalier = 0;     // numéro du prochain palier à atteindre
 
