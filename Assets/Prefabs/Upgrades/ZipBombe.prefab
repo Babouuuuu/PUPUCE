@@ -134,6 +134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZipBombe
   speed: 3
+  prefabExplosion: {fileID: 1474925762481036176, guid: 45fa427323c6f15469f4b7a2ae64062d, type: 3}
+  dureeExplosion: 0.4
   estLanceur: 1
-  cooldown: 3
+  cooldown: 5
   distanceImpact: 0.3
+  rayonExplosion: 4

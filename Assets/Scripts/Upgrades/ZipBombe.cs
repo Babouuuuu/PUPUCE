@@ -7,12 +7,16 @@ public class ZipBombe : MonoBehaviour
     SpriteRenderer sprite;
     Vector2 direction;
 
+    public GameObject prefabExplosion;
+    public float dureeExplosion = 0.4f;
+
     Popup cible;
 
     public bool estLanceur = true;    
     public float cooldown = 3f;       
     public float distanceImpact = 0.3f; 
     float timer;
+    public float rayonExplosion = 4f;
 
     void Start()
     {
@@ -68,8 +72,7 @@ public class ZipBombe : MonoBehaviour
         if (estLanceur) return;
         rb.linearVelocity = direction * speed;
     }
-
-    // AJOUT
+    
     void ChoisirCible()
     {
         cible = TrouverUnePopup();
@@ -79,9 +82,24 @@ public class ZipBombe : MonoBehaviour
    
     void Exploser()
     {
-        cible.Detruire(); // la cible meurt directement
+        Vector3 position = cible.transform.position;
 
-        // ici on pourra ajouter plus tard : dégâts de zone, particules
+        //dégât de zone
+        foreach (Popup popup in new System.Collections.Generic.List<Popup>(Popup.list))
+        {
+            if (popup == null) continue; // sécurité : popup déjà détruite
+
+            if (Vector3.Distance(position, popup.transform.position) <= rayonExplosion)
+            {
+                popup.Interaction();
+            }
+        }
+        
+        if (prefabExplosion != null)
+        {
+            GameObject explosion = Instantiate(prefabExplosion, position, Quaternion.identity);
+            Destroy(explosion, dureeExplosion);
+        }
 
         Destroy(gameObject);
     }
